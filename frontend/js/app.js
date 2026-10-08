@@ -34,7 +34,7 @@ class DigitalTwinApp {
     this.locationManager = new TwinLocationManager(this.apiBaseUrl);
     this.authManager = new TwinAuthManager(this.apiBaseUrl);
 
-    // Initialize charts (Advanced Twin)
+    // Initialize charts
     this.aqiChart = new TwinTrendChart('chartAqiHistory', {
       lineColor: '#00f2fe',
       fillColor: 'rgba(0, 242, 254, 0.15)',
@@ -50,28 +50,6 @@ class DigitalTwinApp {
       max: 45,
       unit: '°C'
     });
-
-    // Initialize charts (Citizen Dashboard)
-    this.citizenAqiChart = new TwinTrendChart('chartAqiHistoryCitizen', {
-      lineColor: '#00f2fe',
-      fillColor: 'rgba(0, 242, 254, 0.15)',
-      min: 20,
-      max: 250,
-      unit: 'AQI'
-    });
-
-    this.citizenTempChart = new TwinTrendChart('chartTempHistoryCitizen', {
-      lineColor: '#f59e0b',
-      fillColor: 'rgba(245, 158, 11, 0.15)',
-      min: 15,
-      max: 45,
-      unit: '°C'
-    });
-
-    // Initialize Product Suite (Landing Page & Citizen Portal)
-    if (window.AetherisProductSuite) {
-      this.productSuite = new AetherisProductSuite(this);
-    }
 
     this.bindEvents();
     await this.fetchInitialData();
@@ -193,7 +171,6 @@ class DigitalTwinApp {
       this.renderAlertsList();
       this.updateDashboardMetrics();
       this.updateCanvasData();
-      await this.loadStationChartHistory(this.activeStationId);
     } catch (err) {
       console.warn('Backend loading or offline, booting fallback telemetry simulation:', err);
       this.setupFallbackData();
@@ -245,7 +222,6 @@ class DigitalTwinApp {
     this.renderAlertsList();
     this.updateDashboardMetrics();
     this.updateCanvasData();
-    this.loadStationChartHistory(this.activeStationId);
   }
 
   startLiveTelemetryPolling() {
@@ -290,46 +266,11 @@ class DigitalTwinApp {
     this.renderStationsList();
     this.updateDashboardMetrics();
     this.updateCanvasData();
-    this.loadStationChartHistory(stationId);
 
     const activeNode = this.telemetryList.find(t => t.stationId === stationId);
     if (activeNode) {
       this.showToast(`Active Twin Sensor: ${activeNode.stationName}`, 'info');
     }
-  }
-
-  async loadStationChartHistory(stationId) {
-    const active = this.telemetryList.find(t => t.stationId === stationId) || this.telemetryList[0];
-    const baseAqi = active ? active.aqi : 80;
-    const baseTemp = active ? active.temperature : 26;
-
-    try {
-      const res = await fetch(`${this.apiBaseUrl}/api/telemetry/history/${stationId}?limit=25`);
-      if (res.ok) {
-        const historyRecords = await res.json();
-        if (historyRecords && historyRecords.length > 0) {
-          if (this.aqiChart) this.aqiChart.loadHistory(historyRecords, 'aqi');
-          if (this.tempChart) this.tempChart.loadHistory(historyRecords, 'temperature');
-          if (this.citizenAqiChart) this.citizenAqiChart.loadHistory(historyRecords, 'aqi');
-          if (this.citizenTempChart) this.citizenTempChart.loadHistory(historyRecords, 'temperature');
-          return;
-        }
-      }
-    } catch (e) {
-      // Offline fallback
-    }
-
-    if (this.aqiChart) this.aqiChart.seedFallbackPoints(baseAqi);
-    if (this.tempChart) this.tempChart.seedFallbackPoints(baseTemp);
-    if (this.citizenAqiChart) this.citizenAqiChart.seedFallbackPoints(baseAqi);
-    if (this.citizenTempChart) this.citizenTempChart.seedFallbackPoints(baseTemp);
-  }
-
-  resizeCharts() {
-    if (this.aqiChart) this.aqiChart.resize();
-    if (this.tempChart) this.tempChart.resize();
-    if (this.citizenAqiChart) this.citizenAqiChart.resize();
-    if (this.citizenTempChart) this.citizenTempChart.resize();
   }
 
   updateDashboardMetrics() {
@@ -410,8 +351,6 @@ class DigitalTwinApp {
     // Add points to trend charts
     if (this.aqiChart) this.aqiChart.addPoint(active.aqi);
     if (this.tempChart) this.tempChart.addPoint(active.temperature);
-    if (this.citizenAqiChart) this.citizenAqiChart.addPoint(active.aqi);
-    if (this.citizenTempChart) this.citizenTempChart.addPoint(active.temperature);
 
     // Update Floating Canvas Tooltip HUD
     const hudNodeName = document.getElementById('hudNodeName');
@@ -424,12 +363,6 @@ class DigitalTwinApp {
     if (hudAqiBox) hudAqiBox.style.background = active.aqiColor || '#00f2fe';
     if (hudNodeMetrics) {
       hudNodeMetrics.textContent = `${active.temperature}°C • ${active.humidity}% Hum • ${active.pm25} µg/m³ PM2.5`;
-    }
-
-    // Update Citizen Dashboard & Landing Preview
-    if (this.productSuite) {
-      this.productSuite.updateCitizenDashboard();
-      this.productSuite.updateLandingPreview();
     }
   }
 
