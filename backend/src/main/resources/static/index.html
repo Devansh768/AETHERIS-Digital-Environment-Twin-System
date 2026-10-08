@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHERIS - Enterprise Digital Twin & Environmental Intelligence Platform</title>
+  <meta name="description" content="Next-generation SaaS Digital Environment Twin System: Real-time 2.5D atmospheric simulation, citizen-friendly health intelligence, GPS IoT pairing, and ESG compliance.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon / Vector Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300f2fe'><circle cx='12' cy='12' r='9'/></svg>">
+</head>
+<body>
+
+  <!-- ==========================================================
+       TOP APP HEADER & UNIVERSAL PRODUCT NAVIGATION BAR
+       ========================================================== -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="brand-logo-ring">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.08M8.46 8.46a5 5 0 0 0 0 7.08"></path>
+        </svg>
+      </div>
+      <div class="brand-title">
+        AETHERIS TWIN
+        <span class="sub">EARTH INTELLIGENCE PLATFORM</span>
+      </div>
+    </div>
+
+    <!-- Product View Switcher Navigation Bar -->
+    <nav class="view-switcher-bar" id="viewSwitcherNav">
+      <button class="view-switcher-btn active" data-view-target="landing" title="SaaS Product Showcase & Platform Capabilities">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>Product Showcase</span>
+      </button>
+
+      <button class="view-switcher-btn" data-view-target="citizen" title="Streamlined Citizen & Business Friendly Dashboard">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+        </svg>
+        <span>Citizen & Business View</span>
+      </button>
+
+      <button class="view-switcher-btn" data-view-target="advanced" title="Advanced 2.5D Digital Twin Physics Simulation Core">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>Advanced Twin Core</span>
+      </button>
+    </nav>
+
+    <!-- Header Actions (Tour, Report, Location Pairing, Server & Auth) -->
+    <div class="header-actions">
+      <!-- Guided Tour Button -->
+      <button class="server-status-pill" id="btnHeaderTour" title="Take an interactive guided walkthrough of the product">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+        <span>Guided Tour</span>
+      </button>
+
+      <!-- Executive Audit Report Generator Button -->
+      <button class="server-status-pill" id="btnHeaderReport" title="Generate Executive Environmental Summary Audit Report (Print / PDF)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Export Audit</span>
+      </button>
+
+      <!-- Indian Business Subscription Button -->
+      <button class="server-status-pill" id="btnHeaderSubscription" title="बिज़नेस सब्सक्रिप्शन प्लान व GST चालान (INR Pricing & Plans)" style="border-color:rgba(245,158,11,0.5); color:#fef08a; background:rgba(245,158,11,0.1);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        <span>₹ बिज़नेस प्लान्स</span>
+      </button>
+
+      <!-- Location Pairing Badge -->
+      <div class="location-badge" id="locationBadge" title="Click to open Location Pairing Radar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+        </svg>
+        <span id="headerLocationLabel">Pair Location (GPS)</span>
+      </div>
+
+      <!-- Server Connection Tag -->
+      <div class="server-status-pill" id="btnServerConfig" title="Backend Server: Spring Boot REST API / Dynamic Simulation">
+        <span class="pulse-indicator"></span>
+        <span id="headerServerLabel">Local (9090)</span>
+      </div>
+
+      <!-- User Profile Display Badge -->
+      <div id="headerUserDisplay" style="display:none;"></div>
+
+      <!-- Auth Sign In / Logout Button -->
+      <button class="btn-header primary" id="btnHeaderAuth">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Sign In</span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================================
+       VIEW 1: SAAS PRODUCT SHOWCASE & LANDING PAGE
+       ========================================================== -->
+  <section class="landing-page-container" id="viewProductLanding">
+    
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-badge">
+        <span class="pulse-indicator"></span>
+        <span>AETHERIS 3.0 • NEXT-GEN EARTH INTELLIGENCE PLATFORM</span>
+      </div>
+
+      <h1 class="hero-title">
+        Real-Time Digital Twins for <br>
+        <span class="gradient-text">Planetary & Urban Microclimates</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Bridge physical IoT sensor telemetry with a high-fidelity 2.5D atmospheric fluid simulation engine. 
+        Empower municipal authorities, industrial operators, and citizens with actionable predictive climate intelligence.
+      </p>
+
+      <!-- Dual Call To Actions -->
+      <div class="hero-cta-group">
+        <button class="btn-hero primary" id="btnHeroLaunchTwin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Launch Live Digital Twin
+        </button>
+
+        <button class="btn-hero secondary" id="btnHeroLaunchCitizen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+          </svg>
+          Open Citizen-Friendly Portal
+        </button>
+
+        <button class="btn-hero outline" id="btnHeroTour">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          Interactive Product Walkthrough
+        </button>
+      </div>
+
+      <!-- Trust Metrics Ribbon -->
+      <div class="hero-metrics-ribbon">
+        <div class="ribbon-item">
+          <div class="ribbon-val">99.98%</div>
+          <div class="ribbon-lbl">Sensor Telemetry Precision</div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-val">&lt; 10m</div>
+          <div class="ribbon-lbl">Geospatial Proximity Sync</div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-val">500+</div>
+          <div class="ribbon-lbl">Active Digital Twin Nodes</div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-val">&lt; 0.5s</div>
+          <div class="ribbon-lbl">Dynamic Hazard Simulation</div>
+        </div>
+      </div>
+
+      <!-- Interactive Mini-Twin Preview Sandbox -->
+      <div class="hero-preview-wrapper">
+        <div class="preview-bar-top">
+          <div class="preview-dots-group">
+            <span class="preview-dot-pill" style="background:#ef4444;"></span>
+            <span class="preview-dot-pill" style="background:#f59e0b;"></span>
+            <span class="preview-dot-pill" style="background:#10b981;"></span>
+          </div>
+          <div style="font-family:var(--font-tech); font-weight:700; font-size:0.85rem; color:var(--cyan-bright); display:flex; align-items:center; gap:0.5rem;">
+            <span class="pulse-indicator"></span>
+            LIVE TELEMETRY PREVIEW • ACTIVE TWIN STREAM
+          </div>
+          <button class="btn-full" onclick="window.TwinApp.productSuite.applyView('advanced', true)" style="background:transparent; border:none; color:var(--text-muted); font-size:0.75rem; cursor:pointer; width:auto;">
+            View Full 2.5D Canvas →
+          </button>
+        </div>
+
+        <!-- Node Switcher Bar inside Preview -->
+        <div class="preview-nodes-bar">
+          <button class="preview-node-btn active" data-station-id="NODE-METRO-01">📍 Metro Central Hub (Urban)</button>
+          <button class="preview-node-btn" data-station-id="NODE-INDUS-02">📍 Industrial Sector 62 (Manufacturing)</button>
+          <button class="preview-node-btn" data-station-id="NODE-FOREST-03">📍 North Ridge Bio-Reserve (Forest)</button>
+          <button class="preview-node-btn" data-station-id="NODE-VALLEY-04">📍 Greenfield Suburban (Residential)</button>
+          <button class="preview-node-btn" data-station-id="NODE-COAST-05">📍 Riverside Coastal Basin (Wetlands)</button>
+        </div>
+
+        <!-- Preview Body -->
+        <div class="preview-body-grid">
+          <div class="preview-left-dial">
+            <div class="preview-circle-wrap">
+              <svg width="110" height="110" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,0.08)" stroke-width="8" fill="none"/>
+                <circle cx="50" cy="50" r="42" stroke="var(--cyan-primary)" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="60" stroke-linecap="round" fill="none"/>
+              </svg>
+              <div class="preview-score-inner">
+                <span style="font-family:var(--font-display); font-size:1.35rem; font-weight:900; color:#fff;" id="previewCleanScore">84/100</span>
+                <span style="font-size:0.65rem; color:var(--cyan-bright); font-family:var(--font-tech); text-transform:uppercase;">CLEAN AIR</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:1.1rem; font-weight:700; color:#fff;" id="previewStationName">Metro Central Hub Station</div>
+              <div style="font-size:0.85rem; color:var(--emerald); font-weight:600; margin-top:2px;" id="previewStationStatus">Air Quality Satisfactory</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">Natural microclimate ventilation active • Safe for outdoor activities</div>
+            </div>
+          </div>
+
+          <div class="preview-stats-grid">
+            <div class="preview-stat-card">
+              <div class="preview-stat-val" id="previewStationAqi" style="color:var(--amber);">142</div>
+              <div class="preview-stat-lbl">Air Quality Index (AQI)</div>
+            </div>
+            <div class="preview-stat-card">
+              <div class="preview-stat-val" id="previewStationTemp">29.5°C</div>
+              <div class="preview-stat-lbl">Ambient Temperature</div>
+            </div>
+            <div class="preview-stat-card">
+              <div class="preview-stat-val" id="previewStationHum">48%</div>
+              <div class="preview-stat-lbl">Relative Humidity</div>
+            </div>
+            <div class="preview-stat-card">
+              <div class="preview-stat-val" id="previewStationPm">62.4 µg/m³</div>
+              <div class="preview-stat-lbl">PM2.5 Fine Particles</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Pillars Section -->
+    <div class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">Core Product Architecture</span>
+        <h2 class="section-title">Built for Mission-Critical Earth Intelligence</h2>
+        <p class="section-subtitle">
+          Engineered from the ground up to synthesize high-frequency IoT sensor telemetry, geospatial mapping, 
+          and physics-informed particulate fluid dynamics into a unified operational command twin.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+          </div>
+          <h3 class="feature-card-title">2.5D Atmospheric Fluid Simulation</h3>
+          <p class="feature-card-desc">
+            HTML5 Canvas particle physics computing real-time vector wind currents, particulate PM2.5/PM10 dispersion plumes, and thermal heatwave gradients across topographic elevation models.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-card-title">Sub-10m GPS Geodesic Radar Sync</h3>
+          <p class="feature-card-desc">
+            Instantly computes Haversine distance and compass bearing between user devices and active monitoring stations, rendering a live geodesic laser connection directly onto the digital twin terrain.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-card-title">AI 'What-If' Hazard Injection</h3>
+          <p class="feature-card-desc">
+            Simulate extreme climate events on the fly: thermal heatwave spikes, industrial chemical emission leaks, and rainstorm cleansing to proactively stress-test municipal and industrial resilience plans.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3 class="feature-card-title">Automated ESG & Compliance Auditing</h3>
+          <p class="feature-card-desc">
+            1-Click generation of formal Environmental Audit summaries certified for EPA, CPCB, and ISO 14001:2015 regulatory compliance, complete with exportable print/PDF formats and JSON telemetry streams.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industry Use Cases Tabs Section -->
+    <div class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">Target Solutions</span>
+        <h2 class="section-title">Designed for Diverse Operational Ecosystems</h2>
+        <p class="section-subtitle">
+          From metropolitan city halls to petrochemical complexes and public school districts, AETHERIS adapts to provide contextual climate intelligence.
+        </p>
+      </div>
+
+      <div class="use-cases-card">
+        <div class="use-case-tabs">
+          <button class="use-case-tab active" data-case="municipal">🏙️ Smart Municipalities</button>
+          <button class="use-case-tab" data-case="industry">🏭 Heavy Industry & Manufacturing</button>
+          <button class="use-case-tab" data-case="health">🌳 Eco-Reserves & Public Health</button>
+          <button class="use-case-tab" data-case="realestate">🏢 Corporate Campuses & ESG</button>
+        </div>
+
+        <!-- Municipal Content -->
+        <div class="use-case-content active" data-case-content="municipal">
+          <div>
+            <h3 style="font-family:var(--font-tech); font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.75rem;">
+              Hyperlocal Urban Microclimate Governance
+            </h3>
+            <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
+              Empower city leaders and traffic control authorities to pinpoint localized smog hotspots, model the impact of vehicular restrictions, and issue real-time citizen health alerts before air quality degrades.
+            </p>
+            <ul class="use-case-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Traffic emission corridor tracking and congestion heatmaps
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Automated school recess air advisories and vulnerable citizen alerts
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Urban Heat Island (UHI) mitigation through vegetation modeling
+              </li>
+            </ul>
+            <button class="btn-header primary" onclick="window.TwinApp.productSuite.applyView('citizen', true)">
+              Explore Municipal Dashboard →
+            </button>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.75rem; text-align:center;">
+            <div style="font-size:3rem; margin-bottom:0.5rem;">🏙️</div>
+            <div style="font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--cyan-bright);">Metropolitan Air Shield</div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">
+              Deployed across municipal command centers to maintain EPA National Ambient Air Quality standards.
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry Content -->
+        <div class="use-case-content" data-case-content="industry">
+          <div>
+            <h3 style="font-family:var(--font-tech); font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.75rem;">
+              Perimeter Emissions & Industrial Scrubbing Automation
+            </h3>
+            <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
+              Continuous boundary line monitoring for chemical plants, refineries, and manufacturing hubs. Automatically trigger electrostatic scrubbers when particulate or CO2 concentrations exceed permissible limits.
+            </p>
+            <ul class="use-case-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Point-source stack and perimeter fence-line gas detection
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Automated ISO 14001 compliance logging with zero manual paper audit
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Instant emergency threshold alarms dispatched via webhooks & SMS
+              </li>
+            </ul>
+            <button class="btn-header primary" onclick="window.TwinApp.productSuite.applyView('advanced', true)">
+              Explore Industrial Digital Twin →
+            </button>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.75rem; text-align:center;">
+            <div style="font-size:3rem; margin-bottom:0.5rem;">🏭</div>
+            <div style="font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--amber);">Industrial Emission Guard</div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">
+              Continuous automated fence-line particulate tracking with predictive plume dispersion.
+            </div>
+          </div>
+        </div>
+
+        <!-- Health / Eco Content -->
+        <div class="use-case-content" data-case-content="health">
+          <div>
+            <h3 style="font-family:var(--font-tech); font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.75rem;">
+              Botanical Bio-Reserves & Ecological Conservation
+            </h3>
+            <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
+              Protect biodiversity corridors, sensitive botanical gardens, and nature reserves from industrial particulate drift, localized soil dryness, and wildfire smoke accumulation.
+            </p>
+            <ul class="use-case-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Forest canopy microclimate temperature and humidity saturation curves
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Wildfire smoke trajectory modeling and particulate early-warning
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Public visitor comfort and clean air index dissemination
+              </li>
+            </ul>
+            <button class="btn-header primary" onclick="window.TwinApp.productSuite.applyView('citizen', true)">
+              View Botanical Reserve Portal →
+            </button>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.75rem; text-align:center;">
+            <div style="font-size:3rem; margin-bottom:0.5rem;">🌳</div>
+            <div style="font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--emerald);">Bio-Reserve Biosphere</div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">
+              Preserving flora and fauna microclimates through continuous canopy telemetry.
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Estate Content -->
+        <div class="use-case-content" data-case-content="realestate">
+          <div>
+            <h3 style="font-family:var(--font-tech); font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.75rem;">
+              Smart Corporate Campuses & Real Estate ESG
+            </h3>
+            <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">
+              Synchronize indoor building management systems (BMS) with outdoor ambient conditions. Save up to 23% in HVAC energy consumption with dynamic free-cooling economizer mode.
+            </p>
+            <ul class="use-case-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Smart economizer synchronization: open air intake during optimal outdoor periods
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                LEED and WELL building standard telemetry verification and tenant displays
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Tenant wellness scoreboards in office lobbies and digital signage
+              </li>
+            </ul>
+            <button class="btn-header primary" onclick="window.TwinApp.productSuite.applyView('citizen', true)">
+              Explore Corporate Campus View →
+            </button>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.75rem; text-align:center;">
+            <div style="font-size:3rem; margin-bottom:0.5rem;">🏢</div>
+            <div style="font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--violet);">Campus Eco-Efficiency</div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">
+              Dynamic HVAC economizer integration and WELL standard environmental compliance.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SaaS Pricing Plans Section (Indian Currency / INR) -->
+    <div class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">Enterprise & Business Plans</span>
+        <h2 class="section-title">पारदर्शी बिज़नेस सब्सक्रिप्शन प्लान (अधिकतम ₹20,000 सीमा)</h2>
+        <p class="section-subtitle">
+          Designed for Indian MSMEs, industrial parks, IT campuses, hospitals, and smart cities. 
+          Affordable, transparent pricing capped at a strict maximum of ₹20,000/month. All commercial plans include GST invoices eligible for 18% Input Tax Credit (ITC).
+        </p>
+      </div>
+
+      <!-- Billing Toggle Switch -->
+      <div class="billing-toggle-wrapper">
+        <span style="font-size:0.9rem; color:var(--text-muted);">बिलिंग विकल्प (Billing Interval):</span>
+        <div class="billing-switch">
+          <button class="billing-switch-btn" id="btnBillingMonthly">मासिक (Monthly)</button>
+          <button class="billing-switch-btn active" id="btnBillingAnnual">वार्षिक (Annual - Save 20%)</button>
+        </div>
+        <span class="discount-pill">✨ 2 महीने मुफ़्त (2 Months Free)</span>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Community Tier -->
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Community Open Data (नागरिक व अनुसंधान)</div>
+          <div class="pricing-tier-desc">Ideal for citizens, environmental scholars, universities, and public researchers across India.</div>
+          <div class="pricing-price-box">
+            <span class="pricing-price-num">₹0</span>
+            <span style="color:var(--text-dim); font-size:0.9rem;">/ हमेशा के लिए मुफ़्त (Forever Free)</span>
+          </div>
+          <ul class="pricing-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Up to 5 Public Monitoring Nodes (Delhi NCR, Mumbai, Bengaluru, etc.)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Citizen & Business Friendly Clean Air Score Portal
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              GPS Proximity Node Pairing & State-wise Filters
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              24-Hour Time-Series Telemetry History Charts
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Community Open Environmental REST API
+            </li>
+          </ul>
+          <button class="btn-full" onclick="window.TwinApp.productSuite.applyView('citizen', true)" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); color:#fff;">
+            निःशुल्क शुरू करें (Get Started Free)
+          </button>
+        </div>
+
+        <!-- Enterprise Pro (Featured) -->
+        <div class="pricing-card featured">
+          <span class="pricing-badge-popular">सर्वश्रेष्ठ मूल्य (MOST POPULAR)</span>
+          <div class="pricing-tier-name">Smart Business Pro (स्मार्ट बिज़नेस प्रो)</div>
+          <div class="pricing-tier-desc">Designed for industrial parks, manufacturing plants, corporate tech corridors, and hospitals.</div>
+          <div class="pricing-price-box">
+            <span class="pricing-price-num" id="priceProVal">₹6,999</span>
+            <span class="price-cycle-label" style="color:var(--cyan-bright); font-size:0.85rem; font-family:var(--font-tech);">/ माह (वार्षिक बिलिंग - 20% बचत)</span>
+          </div>
+          <div style="font-size:0.75rem; color:var(--emerald); margin-top:-0.8rem; margin-bottom:1rem; font-family:var(--font-tech);">
+            + 18% GST (100% Eligible for Input Tax Credit ITC)
+          </div>
+          <ul class="pricing-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Up to 50 Dedicated Industrial & Campus IoT Sensor Nodes
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Interactive 2.5D Canvas Terrain & Particle Plume Physics
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              AI 'What-If' Hazard Injection Simulator (Spikes & Storms)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              CPCB (Central Pollution Control Board) & SPCB Standard Audit Exporter
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Instant WhatsApp, SMS & Webhook Emergency Alarms
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Standard 99.9% Uptime SLA with Dedicated Indian Support
+            </li>
+          </ul>
+          <button class="btn-full primary" id="btnSubscribePro" onclick="window.TwinApp.productSuite.openSubscriptionModal('pro')" style="box-shadow:0 0 20px var(--cyan-glow);">
+            14-दिन का निःशुल्क ट्रायल / सदस्यता लें (Subscribe)
+          </button>
+        </div>
+
+        <!-- Metropolis Sovereign Tier -->
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Metropolis Sovereign (स्मार्ट सिटी व सरकार)</div>
+          <div class="pricing-tier-desc">For municipal corporations, state pollution boards, smart city command centers (ICCC), and massive SEZs.</div>
+          <div class="pricing-price-box">
+            <span class="pricing-price-num" id="priceEnterpriseVal">₹15,999</span>
+            <span class="price-cycle-label" style="color:var(--text-dim); font-size:0.85rem; font-family:var(--font-tech);">/ माह (वार्षिक बिलिंग - अधिकतम ₹20,000)</span>
+          </div>
+          <div style="font-size:0.75rem; color:var(--emerald); margin-top:-0.8rem; margin-bottom:1rem; font-family:var(--font-tech);">
+            + 18% GST (Govt / Corporate GeM Portal Billing Available)
+          </div>
+          <ul class="pricing-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Unlimited Sensor Nodes & Custom Municipal Ward GIS Layers
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              On-Premise Sovereign Server Deployment (Spring Boot + MySQL)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Air-Gapped Integrated Command & Control Center (ICCC) Integration
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Dedicated 24/7 Incident War Room & Field Engineer SLA
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Custom Atmospheric Dispersion AI Model Fine-Tuning
+            </li>
+          </ul>
+          <button class="btn-full" id="btnSubscribeEnterprise" onclick="window.TwinApp.productSuite.openSubscriptionModal('enterprise')" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); color:#fff;">
+            कॉर्पोरेट / सरकारी सेल्स संपर्क (Subscribe / GeM Order)
+          </button>
+        </div>
+      </div>
+
+      <!-- Indian Payment Methods & GST Compliance Strip -->
+      <div style="margin:2.5rem 0 1.5rem 0; padding:1.25rem; background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <span style="font-family:var(--font-tech); font-weight:700; color:#fff; font-size:0.95rem;">स्वीकृत भुगतान विधियां (Payment Modes):</span>
+          <span style="font-size:0.82rem; color:var(--cyan-bright); background:rgba(6,182,212,0.1); border:1px solid var(--border-glow); padding:0.2rem 0.5rem; border-radius:4px;">⚡ UPI (GPay, PhonePe, Paytm, BHIM)</span>
+          <span style="font-size:0.82rem; color:var(--text-muted); background:rgba(255,255,255,0.04); border:1px solid var(--border-subtle); padding:0.2rem 0.5rem; border-radius:4px;">🏦 Net Banking (All Indian Banks)</span>
+          <span style="font-size:0.82rem; color:var(--text-muted); background:rgba(255,255,255,0.04); border:1px solid var(--border-subtle); padding:0.2rem 0.5rem; border-radius:4px;">💳 Corporate Cards / NEFT / RTGS</span>
+        </div>
+        <div style="font-size:0.82rem; color:var(--emerald); display:flex; align-items:center; gap:0.4rem; font-weight:600;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          18% GST Input Tax Credit (ITC) चालान उपलब्ध
+        </div>
+      </div>
+
+      <!-- Enterprise Compliance & Security Strip -->
+      <div class="compliance-strip">
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>ISO 14001:2015 & CPCB Standard</span>
+        </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          <span>National Ambient Air Quality (NAAQS) Verified</span>
+        </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>AES-256 Telemetry Encryption</span>
+        </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          <span>Spring Boot 3.3.5 & MySQL Enterprise</span>
+        </div>
+      </div>
+    </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>ISO 14001:2015 Environmental Standard</span>
+        </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          <span>EPA AirNow Standard Verified</span>
+        </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>AES-256 Telemetry Encryption</span>
+        </div>
+        <div class="compliance-badge-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          <span>Spring Boot 3.3.5 & MySQL Enterprise</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product FAQ Section -->
+    <div class="section-wrapper">
+      <div class="section-header">
+        <span class="section-tag">Frequently Asked Questions</span>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <p class="section-subtitle">Common questions regarding sensor hardware compatibility, deployment, and data privacy.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <div class="faq-question">
+            <span>What hardware sensors can connect to the Digital Twin?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            AETHERIS supports any IoT environmental hardware that exports REST API, MQTT, or Modbus protocols. Out of the box, it connects with popular optical particulate counters (Plantower PMS5003, Sensirion SPS30), NDIR CO2 sensors (MH-Z19), and calibrated multi-gas telemetry stations.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the GPS Proximity Pairing work?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            When you allow location permission, the system takes your device coordinates and computes high-precision Haversine geodesic distance and azimuth bearing to every twin station in real time. It pairs you with the closest node and visualizes a laser vector link on the 2.5D radar canvas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can AETHERIS run fully on-premise or offline?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Yes. The backend runs on Java Spring Boot and MySQL (with seamless fallback to embedded H2 if database credentials are not configured). The frontend is completely standalone HTML5/Vanilla JS, allowing deployment in completely air-gapped municipal command rooms.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How are the 'What-If' hazard simulations calculated?</span>
+            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Our atmospheric simulation applies Gaussian plume dispersion physics modulated by live wind speed, elevation variance, and thermal buoyancy. Injected scenarios like heatwave spikes or industrial emissions simulate cascading effects across neighboring nodes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Landing Page Modern Footer -->
+    <footer class="landing-footer">
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <div class="brand-logo-ring" style="width:28px; height:28px;">
+          <svg viewBox="0 0 24 24" style="width:14px; height:14px;"><circle cx="12" cy="12" r="3"></circle></svg>
+        </div>
+        <span style="font-family:var(--font-tech); font-weight:700; color:#fff; font-size:1rem;">AETHERIS TWIN</span>
+        <span>• Enterprise Environmental Digital Twin</span>
+      </div>
+
+      <div style="display:flex; gap:1.5rem; font-size:0.85rem;">
+        <a href="#viewSwitcherNav" onclick="window.TwinApp.productSuite.applyView('citizen', true)" style="color:var(--cyan-bright); text-decoration:none;">Citizen View</a>
+        <a href="#viewSwitcherNav" onclick="window.TwinApp.productSuite.applyView('advanced', true)" style="color:var(--cyan-bright); text-decoration:none;">Advanced Twin</a>
+        <a href="#btnHeaderReport" onclick="window.TwinApp.productSuite.openExecutiveReport()" style="color:var(--text-muted); text-decoration:none;">Audit Compliance</a>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <span class="pulse-indicator"></span>
+        <span>System Status: Fully Operational</span>
+      </div>
+    </footer>
+  </section>
+
+
+  <!-- ==========================================================
+       VIEW 2: STREAMLINED CITIZEN & BUSINESS FRIENDLY DASHBOARD
+       ========================================================== -->
+  <section class="citizen-viewport" id="viewCitizenDashboard">
+    
+    <!-- Top Environmental Health Verdict Banner -->
+    <div class="citizen-verdict-card verdict-good" id="citizenVerdictBanner">
+      <div class="citizen-top-meta-row">
+        <div class="citizen-city-heading">
+          <span class="pulse-indicator"></span>
+          <span id="citizenActiveStationName">Metro Central Hub Station</span>
+          <span class="station-zone-pill" id="citizenActiveZone">URBAN CORE</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <button id="citizenTempUnitToggle" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); color:var(--cyan-bright); font-family:var(--font-tech); font-weight:bold; padding:0.25rem 0.65rem; border-radius:var(--radius-sm); cursor:pointer;">
+            °C
+          </button>
+          <span style="font-size:0.8rem; color:var(--text-dim); font-family:var(--font-tech);" id="citizenUpdateTime">Updated Just Now</span>
+        </div>
+      </div>
+
+      <div class="citizen-verdict-content">
+        <div class="citizen-verdict-text">
+          <div class="citizen-verdict-title" id="citizenVerdictTitle">
+            🌿 Crisp & Clean Air — Optimal Conditions for All Activities
+          </div>
+          <div class="citizen-verdict-sub" id="citizenVerdictSub">
+            Air purity is at optimal levels today. Safe and recommended for outdoor sports, school recess, jogging, and natural home ventilation.
+          </div>
+        </div>
+
+        <!-- Animated SVG Clean Air Score Gauge Ring -->
+        <div class="citizen-score-ring-wrap">
+          <div class="score-svg-circle">
+            <svg width="96" height="96" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,0.08)" stroke-width="9" fill="none"/>
+              <circle id="citizenScoreCircle" cx="50" cy="50" r="44" stroke="#10b981" stroke-width="9" stroke-dasharray="276.4" stroke-dashoffset="40" stroke-linecap="round" fill="none" style="transition: stroke-dashoffset 0.8s ease, stroke 0.5s ease;"/>
+            </svg>
+            <div class="score-val-center">
+              <span class="score-num" id="citizenScoreVal">85</span>
+              <span class="score-denom">OUT OF 100</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-tech); font-size:1.15rem; font-weight:700; color:#fff;">CLEAN AIR SCORE</div>
+            <div style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">Real-Time EPA Weighted Index</div>
+            <div style="font-size:0.75rem; color:var(--cyan-bright); margin-top:4px;">High Environmental Purity</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lifestyle Quick Action Chips -->
+      <div class="lifestyle-chips-row">
+        <div class="lifestyle-chip" id="citizenChipRun">
+          <strong>🏃 Outdoor Sports:</strong> Highly Recommended
+        </div>
+        <div class="lifestyle-chip" id="citizenChipVent">
+          <strong>🪟 Room Ventilation:</strong> Open Windows Freely
+        </div>
+        <div class="lifestyle-chip" id="citizenChipUv">
+          <strong>🧴 Sun Protection:</strong> Moderate (SPF 30+)
+        </div>
+        <div class="lifestyle-chip" id="citizenChipQuiet">
+          <strong>🎧 Noise Ambience:</strong> Peaceful (48 dB)
+        </div>
+      </div>
+    </div>
+
+    <!-- Six Key Human-Friendly Metric Cards -->
+    <div class="citizen-kpi-grid">
+      <!-- 1. Air Purity & Breathability -->
+      <div class="citizen-metric-card">
+        <div class="citizen-metric-header">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-bright)" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+            Air Purity & Breathability
+          </span>
+          <span style="font-size:0.75rem; color:var(--emerald); font-weight:700;">NORMAL</span>
+        </div>
+        <div class="citizen-metric-val" id="citizenValPurity">86% Purity</div>
+        <div class="citizen-metric-sub" id="citizenSubPurity">PM2.5: 28.4 µg/m³ • PM10: 62.0 µg/m³</div>
+      </div>
+
+      <!-- 2. Thermal Comfort & Real-Feel -->
+      <div class="citizen-metric-card">
+        <div class="citizen-metric-header">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+            Thermal Comfort & Real-Feel
+          </span>
+          <span style="font-size:0.75rem; color:var(--cyan-bright); font-weight:700;">COMFORTABLE</span>
+        </div>
+        <div class="citizen-metric-val" id="citizenValTemp">28.5°C</div>
+        <div class="citizen-metric-sub" id="citizenSubTemp">Humidity: 48% • Mild temperature, zero heat stress</div>
+      </div>
+
+      <!-- 3. Solar UV Exposure -->
+      <div class="citizen-metric-card">
+        <div class="citizen-metric-header">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+            Solar UV Exposure
+          </span>
+          <span style="font-size:0.75rem; color:var(--amber); font-weight:700;">MODERATE</span>
+        </div>
+        <div class="citizen-metric-val" id="citizenValUv">UV 5.8</div>
+        <div class="citizen-metric-sub" id="citizenSubUv">Wear sunglasses & light sunscreen during midday peaks</div>
+      </div>
+
+      <!-- 4. Natural Breeze & Dispersion -->
+      <div class="citizen-metric-card">
+        <div class="citizen-metric-header">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-bright)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            Natural Breeze & Fresh Air
+          </span>
+          <span style="font-size:0.75rem; color:var(--emerald); font-weight:700;">ACTIVE</span>
+        </div>
+        <div class="citizen-metric-val" id="citizenValWind">7.2 km/h NW</div>
+        <div class="citizen-metric-sub" id="citizenSubWind">Gentle continuous breeze assisting natural ventilation</div>
+      </div>
+
+      <!-- 5. Acoustic Serenity Level -->
+      <div class="citizen-metric-card">
+        <div class="citizen-metric-header">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.08"></path></svg>
+            Acoustic Serenity Level
+          </span>
+          <span style="font-size:0.75rem; color:var(--emerald); font-weight:700;">TRANQUIL</span>
+        </div>
+        <div class="citizen-metric-val" id="citizenValNoise">52 dB</div>
+        <div class="citizen-metric-sub" id="citizenSubNoise">Comfortable residential ambiance, safe for quiet study</div>
+      </div>
+
+      <!-- 6. Carbon & Air Freshness -->
+      <div class="citizen-metric-card">
+        <div class="citizen-metric-header">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><path d="M3 15h18M3 9h18"></path></svg>
+            Atmospheric Freshness (CO2)
+          </span>
+          <span style="font-size:0.75rem; color:var(--emerald); font-weight:700;">OPTIMAL</span>
+        </div>
+        <div class="citizen-metric-val" id="citizenValFresh">425 ppm</div>
+        <div class="citizen-metric-sub" id="citizenSubFresh">Outdoor mountain-fresh baseline oxygenation level</div>
+      </div>
+    </div>
+
+    <!-- 24-Hour Environmental History Trends (Citizen View) -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.25rem; margin-bottom:2rem;">
+      <div class="citizen-metric-card" style="padding:1.25rem;">
+        <div class="citizen-metric-header" style="margin-bottom:0.5rem;">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-bright)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            Air Quality Index (AQI) 24h Trend
+          </span>
+          <span style="font-size:0.75rem; color:var(--cyan-bright); font-family:var(--font-tech); font-weight:700;">AQI HISTORY</span>
+        </div>
+        <canvas id="chartAqiHistoryCitizen" style="width:100%; height:130px;"></canvas>
+      </div>
+
+      <div class="citizen-metric-card" style="padding:1.25rem;">
+        <div class="citizen-metric-header" style="margin-bottom:0.5rem;">
+          <span class="citizen-metric-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+            Thermal Comfort & Temperature Drift
+          </span>
+          <span style="font-size:0.75rem; color:var(--amber); font-family:var(--font-tech); font-weight:700;">°C HISTORY</span>
+        </div>
+        <canvas id="chartTempHistoryCitizen" style="width:100%; height:130px;"></canvas>
+      </div>
+    </div>
+
+    <!-- Daily Actionable Recommendations Panel -->
+    <div class="citizen-recs-grid">
+      <!-- Citizen & Family Recommendations -->
+      <div class="citizen-rec-box">
+        <div class="citizen-rec-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-bright)" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          For Citizens, Families & Schools
+        </div>
+        <ul class="citizen-rec-items">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Jogging & Cycling:</strong> Excellent conditions throughout morning and early evening windows.</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>School Recess:</strong> Full outdoor playground activities recommended without restriction.</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Home Ventilation:</strong> Safe to open windows for cross-breeze airflow to flush indoor stale air.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Facility & Business Recommendations -->
+      <div class="citizen-rec-box">
+        <div class="citizen-rec-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          For Facility, Building & Business Managers
+        </div>
+        <ul class="citizen-rec-items">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>HVAC Economizer Mode:</strong> Engage fresh air dampers to reduce AC compressor load and save energy.</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Outdoor Dining & Events:</strong> Patio dining and campus events are strongly supported by weather metrics.</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span><strong>Compliance Summary:</strong> Telemetry meets all local municipality ambient air quality guidelines.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Visual Station / City Explorer Grid -->
+    <div class="citizen-stations-section">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+        <div>
+          <h3 style="font-family:var(--font-tech); font-size:1.35rem; font-weight:700; color:#fff;">
+            Explore Other Monitoring Zones
+          </h3>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            Switch stations to check microclimates across urban, industrial, and botanical sectors.
+          </p>
+        </div>
+        <button class="btn-full" id="btnCitizenExport" style="width:auto; padding:0.45rem 1rem; background:rgba(6,182,212,0.12); border:1px solid var(--border-glow); color:var(--cyan-bright); font-size:0.85rem;">
+          📄 Download Executive Summary
+        </button>
+      </div>
+
+      <div class="citizen-station-grid" id="citizenStationGrid">
+        <!-- Rendered dynamically by product.js -->
+      </div>
+    </div>
+
+    <!-- Callout Banner: Switch to 2.5D Digital Twin -->
+    <div class="switch-twin-banner">
+      <div>
+        <div style="font-family:var(--font-tech); font-size:1.35rem; font-weight:700; color:#fff;">
+          Ready for In-Depth 2.5D Atmospheric Simulation?
+        </div>
+        <div style="color:var(--text-muted); font-size:0.9rem; margin-top:0.25rem;">
+          Access particle dispersion flow, thermal heatmap gradients, radar range sweeps, and 'What-If' hazard injection.
+        </div>
+      </div>
+      <button class="btn-hero primary" id="btnCitizenToAdvanced" style="padding:0.65rem 1.4rem; font-size:0.95rem;">
+        ⚡ Open Advanced Twin Core
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================
+       VIEW 3: ADVANCED DIGITAL TWIN ENGINEERING CORE
+       ========================================================== -->
+  <main class="main-viewport" id="viewAdvancedTwin" style="display:none;">
+
+    <!-- Left Column: Monitoring Stations & Sensor Cluster -->
+    <aside class="glass-panel panel-sidebar-left">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+          Sensor Nodes
+        </h2>
+        <button id="btnOpenAddNode" title="Register New Sensor Node" style="background:transparent; border:1px solid var(--border-glow); color:var(--cyan-bright); border-radius:var(--radius-sm); padding:0.25rem 0.6rem; font-family:var(--font-tech); font-weight:700; cursor:pointer;">
+          + ADD
+        </button>
+      </div>
+
+      <!-- State-Wise Location Selector / Filter -->
+      <div class="state-filter-box" id="stateFilterBox">
+        <div class="state-filter-label">
+          <span>State / Territory</span>
+          <span id="stateCountBadge" style="color:var(--cyan-bright); font-weight:700;">All States</span>
+        </div>
+        <select class="state-filter-select" id="filterStateSelect">
+          <option value="ALL">🌐 All States (India & Global)</option>
+          <option value="Delhi NCR">📍 Delhi NCR</option>
+          <option value="Maharashtra">📍 Maharashtra</option>
+          <option value="Karnataka">📍 Karnataka</option>
+          <option value="Tamil Nadu">📍 Tamil Nadu</option>
+          <option value="Uttar Pradesh">📍 Uttar Pradesh</option>
+          <option value="Gujarat">📍 Gujarat</option>
+        </select>
+      </div>
+
+      <!-- Interactive Stations List -->
+      <div class="station-list-group" id="stationListGroup">
+        <div style="text-align:center; padding:2rem; color:var(--text-dim);">Loading nodes...</div>
+      </div>
+
+      <!-- System Health Quick Diagnostic -->
+      <div style="margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted);">
+          <span>Backend REST API</span>
+          <span style="color:var(--emerald); font-weight:600;">Spring Boot 3.3.5</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted);">
+          <span>Database Engine</span>
+          <span style="color:var(--cyan-bright); font-weight:600;">MySQL / In-Memory H2</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted);">
+          <span>Geospatial Pairing</span>
+          <span style="color:var(--emerald); font-weight:600;">Active Haversine Radar</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center Column: Digital Twin Stage & Telemetry Gauges -->
+    <section class="twin-stage-container">
+
+      <!-- Dynamic Location Pairing Banner -->
+      <div class="location-pairing-banner" id="locationBanner">
+        <div class="location-banner-text">
+          <div class="title" style="display:flex; align-items:center; gap:0.5rem;">
+            <span class="pulse-indicator"></span>
+            Pair Physical Device Location
+          </div>
+          <div class="sub">Enable GPS location to sync real-time environmental data with the nearest monitoring twin node.</div>
+        </div>
+        <button class="location-banner-btn" id="btnBannerPairLocation">Enable Location</button>
+      </div>
+
+      <!-- 2.5D Digital Twin Canvas Card -->
+      <div class="twin-canvas-card">
+        <!-- Canvas HUD Overlay -->
+        <div class="canvas-hud-overlay">
+          <div class="hud-pill">
+            <span class="pulse-indicator"></span>
+            <span>ACTIVE TWIN: <strong id="activeStationName">Metro Central Hub</strong></span>
+            <span style="color:var(--text-dim);">|</span>
+            <span id="activeZoneType" style="color:var(--cyan-bright); font-size:0.75rem;">URBAN CORE</span>
+          </div>
+
+          <div class="hud-controls-group">
+            <button class="hud-btn active" id="viewModeDispersion" title="Atmospheric Particulate Dispersion">Air Dispersion</button>
+            <button class="hud-btn" id="viewModeThermal" title="Heatwave & Thermal Gradient">Thermal Map</button>
+            <button class="hud-btn" id="viewModeRadar" title="GPS Proximity & Range Rings">Radar Proximity</button>
+          </div>
+        </div>
+
+        <!-- HTML5 Canvas for Interactive Twin Terrain & Particle Simulation -->
+        <canvas id="twinCanvas"></canvas>
+
+        <!-- Floating Quick Tooltip Drawer inside Canvas -->
+        <div class="twin-node-tooltip" id="twinNodeTooltip">
+          <div class="node-tooltip-left">
+            <div class="node-tooltip-aqi-box" id="hudAqiBox" style="background:#f59e0b;">
+              <span class="val" id="hudNodeAqi">142</span>
+              <span class="lbl">AQI</span>
+            </div>
+            <div>
+              <div style="font-family:var(--font-tech); font-weight:700; font-size:1.05rem; color:#fff;" id="hudNodeName">Metro Central Hub Station</div>
+              <div style="font-size:0.78rem; color:var(--text-muted);" id="hudNodeMetrics">29.5°C • 48% Hum • 62.4 µg/m³ PM2.5</div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:0.75rem; color:var(--text-dim); text-transform:uppercase;">Node Telemetry Status</div>
+            <div style="color:var(--emerald); font-weight:700; font-family:var(--font-tech); font-size:0.95rem;">CONTINUOUS STREAM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Telemetry KPI Gauges Grid -->
+      <div class="telemetry-kpi-grid">
+        <!-- AQI Card -->
+        <div class="kpi-card" id="cardAqi">
+          <div class="kpi-header">
+            <span class="kpi-title">Air Quality Index</span>
+            <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valAqi">142</span>
+            <span class="kpi-unit">AQI</span>
+          </div>
+          <div class="kpi-subtext" id="lblAqiCategory">Moderate Quality</div>
+        </div>
+
+        <!-- Ambient Temperature Card -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Ambient Temp</span>
+            <button id="tempUnitToggle" style="background:transparent; border:none; color:var(--cyan-bright); font-family:var(--font-tech); font-weight:bold; cursor:pointer;">°C</button>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valTemperature">29.5</span>
+            <span class="kpi-unit" id="unitTemperature">°C</span>
+          </div>
+          <div class="kpi-subtext">Heat Index: Normal</div>
+        </div>
+
+        <!-- Relative Humidity Card -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Humidity</span>
+            <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valHumidity">48.0</span>
+            <span class="kpi-unit">%</span>
+          </div>
+          <div class="kpi-subtext">Vapor Saturation: Optimal</div>
+        </div>
+
+        <!-- CO2 Level Card -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Carbon Dioxide</span>
+            <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 15h18M3 9h18"></path>
+            </svg>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valCo2">540</span>
+            <span class="kpi-unit">ppm</span>
+          </div>
+          <div class="kpi-subtext">Atmospheric Baseline</div>
+        </div>
+
+        <!-- PM2.5 Fine Particulates -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">PM2.5 Particles</span>
+            <span style="font-size:0.75rem; color:var(--text-dim);">µg/m³</span>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valPm25">62.4</span>
+            <span class="kpi-unit">µg/m³</span>
+          </div>
+          <div class="kpi-subtext warning">Permissible: &lt;35</div>
+        </div>
+
+        <!-- PM10 Coarse Particulates -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">PM10 Particles</span>
+            <span style="font-size:0.75rem; color:var(--text-dim);">µg/m³</span>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valPm10">118.0</span>
+            <span class="kpi-unit">µg/m³</span>
+          </div>
+          <div class="kpi-subtext">Dust & Combustion</div>
+        </div>
+
+        <!-- Noise Level -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Acoustic Noise</span>
+            <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.08"></path>
+            </svg>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valNoise">68.5</span>
+            <span class="kpi-unit">dB</span>
+          </div>
+          <div class="kpi-subtext">Urban Ambient Sound</div>
+        </div>
+
+        <!-- Wind & UV -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Wind Vector & UV</span>
+            <span style="font-size:0.75rem; color:var(--text-dim);" id="valUv">UV: 6.2</span>
+          </div>
+          <div class="kpi-value-row">
+            <span class="kpi-value" id="valWind" style="font-size:1.15rem;">7.5 km/h (NW)</span>
+          </div>
+          <div class="kpi-subtext">Dispersal Velocity</div>
+        </div>
+      </div>
+
+      <!-- Time-Series Graphs Grid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+        <div class="glass-panel" style="padding:1rem;">
+          <div class="panel-header" style="margin-bottom:0.5rem; padding-bottom:0.4rem;">
+            <h3 class="panel-title" style="font-size:0.8rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              Air Quality Real-time Trend
+            </h3>
+            <span style="font-size:0.75rem; color:var(--cyan-bright); font-family:var(--font-tech);">AQI</span>
+          </div>
+          <canvas id="chartAqiHistory" style="width:100%; height:120px;"></canvas>
+        </div>
+
+        <div class="glass-panel" style="padding:1rem;">
+          <div class="panel-header" style="margin-bottom:0.5rem; padding-bottom:0.4rem;">
+            <h3 class="panel-title" style="font-size:0.8rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+              </svg>
+              Thermal Heat Gradient Trend
+            </h3>
+            <span style="font-size:0.75rem; color:var(--amber); font-family:var(--font-tech);">°C</span>
+          </div>
+          <canvas id="chartTempHistory" style="width:100%; height:120px;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Column: Simulation Scenarios & Hazard Warnings -->
+    <aside class="glass-panel panel-sidebar-right">
+      <div class="simulation-panel-content">
+        <div class="panel-header">
+          <h2 class="panel-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            Twin Scenarios
+          </h2>
+          <span style="font-size:0.72rem; color:var(--cyan-bright); font-family:var(--font-tech);">WHAT-IF INJECTION</span>
+        </div>
+
+        <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.3rem;">
+          Inject environmental disturbances into digital twin nodes to simulate microclimate consequences:
+        </p>
+
+        <div class="scenario-buttons-grid">
+          <button class="btn-scenario heatwave" data-scenario="HEATWAVE">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            </svg>
+            Heatwave Spike
+          </button>
+
+          <button class="btn-scenario pollution" data-scenario="INDUSTRIAL_EMISSION">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+            Emission Spike
+          </button>
+
+          <button class="btn-scenario rain" data-scenario="RAIN_CLEANSING">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="16" y1="13" x2="16" y2="21"></line>
+              <line x1="8" y1="13" x2="8" y2="21"></line>
+              <line x1="12" y1="15" x2="12" y2="23"></line>
+              <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+            </svg>
+            Cleansing Storm
+          </button>
+
+          <button class="btn-scenario reset" data-scenario="NORMAL">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 2v6h6"></path>
+              <path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path>
+              <path d="M21 22v-6h-6"></path>
+              <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path>
+            </svg>
+            Reset Baseline
+          </button>
+        </div>
+
+        <!-- Hazard Alert Notifications Feed -->
+        <div style="margin-top:1.25rem;">
+          <div class="panel-header" style="margin-bottom:0.65rem;">
+            <h3 class="panel-title" style="font-size:0.85rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              Threshold Alerts
+            </h3>
+            <span class="strip-pill" style="font-size:0.75rem; padding:0.15rem 0.5rem;" id="alertsCountBadge">2</span>
+          </div>
+
+          <div class="alerts-list" id="alertsListContainer">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Audit Export Actions -->
+        <div style="margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:0.5rem;">
+          <button class="btn-full" id="btnExportReport" style="background:rgba(255,255,255,0.06); border:1px solid var(--border-subtle); color:var(--text-main); font-size:0.85rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Export Environmental Audit (JSON)
+          </button>
+          <button class="btn-full" onclick="window.TwinApp.productSuite.openExecutiveReport()" style="background:rgba(6,182,212,0.12); border:1px solid var(--border-glow); color:var(--cyan-bright); font-size:0.85rem;">
+            📄 View Certified PDF Audit Summary
+          </button>
+        </div>
+
+      </div>
+    </aside>
+  </main>
+
+
+  <!-- ==========================================================
+       MODAL 1: LOCATION PAIRING POPUP ON SCREEN
+       ========================================================== -->
+  <div class="modal-backdrop" id="locationModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+          </svg>
+          Device Location Pairing
+        </h3>
+        <button class="modal-close-btn" id="closeLocationModal">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        
+        <!-- Animated Radar Screen Graphic -->
+        <div class="location-radar-visual">
+          <div class="radar-sweep-beam" id="modalRadarBeam"></div>
+          <div class="radar-center-dot"></div>
+        </div>
+
+        <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#fff; margin-bottom:0.35rem;">
+          PAIR PHYSICAL ENVIRONMENT
+        </h4>
+        <p style="font-size:0.83rem; color:var(--text-muted); line-height:1.45; margin-bottom:1rem;">
+          Sync your physical coordinates via GPS or State selection to pair with the nearest Digital Twin node across local or remote servers.
+        </p>
+
+        <div style="font-size:0.75rem; color:var(--cyan-bright); background:rgba(6,182,212,0.1); border:1px solid var(--border-glow); padding:0.25rem 0.6rem; border-radius:var(--radius-full); margin-bottom:1rem; display:inline-block;">
+          ⚡ Works on Localhost (9090) & Any Remote Server
+        </div>
+
+        <div id="locationStatusMsg" style="font-size:0.82rem; margin-bottom:1rem; min-height:18px;"></div>
+
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          <button class="btn-full primary" id="btnRequestGps">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="12 8 8 12 12 16 12 8"></polygon>
+            </svg>
+            Auto-Detect Device Location (GPS / IP)
+          </button>
+
+          <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:0.75rem; text-align:left;">
+            <label style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-family:var(--font-tech); display:block; margin-bottom:0.35rem;">
+              State-Wise Location Pairing:
+            </label>
+            <select id="selectPairingState" class="form-control" style="font-size:0.85rem; padding:0.45rem 0.6rem; margin-bottom:0.5rem;">
+              <option value="">-- Select Your State / Territory --</option>
+              <option value="Delhi NCR">📍 Delhi NCR (Metro & Riverine Nodes)</option>
+              <option value="Maharashtra">📍 Maharashtra (Mumbai Marine & Pune Tech)</option>
+              <option value="Karnataka">📍 Karnataka (Bengaluru Smart Corridor)</option>
+              <option value="Tamil Nadu">📍 Tamil Nadu (Chennai Coastal & Guindy)</option>
+              <option value="Uttar Pradesh">📍 Uttar Pradesh (Noida & Kanpur Ganga)</option>
+              <option value="Gujarat">📍 Gujarat (Ahmedabad Sabarmati)</option>
+            </select>
+
+            <label style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-family:var(--font-tech); display:block; margin-bottom:0.35rem;">
+              Or Select Specific Monitoring Zone:
+            </label>
+            <select id="selectPresetZone" class="form-control" style="font-size:0.85rem; padding:0.45rem 0.6rem;">
+              <option value="">-- Choose Preset Node --</option>
+              <option value="28.6139,77.2090,Delhi NCR">Delhi: Metro Central Hub (Urban Core)</option>
+              <option value="28.6850,77.2150,Delhi NCR">Delhi: North Ridge Botanical Reserve (Forest)</option>
+              <option value="18.9220,72.8347,Maharashtra">Maharashtra: Mumbai Coastal Marine</option>
+              <option value="18.5913,73.7389,Maharashtra">Maharashtra: Pune Hinjewadi Tech Park</option>
+              <option value="12.8399,77.6770,Karnataka">Karnataka: Bengaluru Silicon Smart Hub</option>
+              <option value="13.0475,80.2824,Tamil Nadu">Tamil Nadu: Chennai Marina Coastal Lab</option>
+              <option value="28.5355,77.3910,Uttar Pradesh">Uttar Pradesh: Noida Sector 62 Park</option>
+              <option value="23.0300,72.5800,Gujarat">Gujarat: Ahmedabad Sabarmati Hub</option>
+            </select>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.25rem;">
+            <button type="button" id="btnToggleManualCoords" style="background:transparent; border:none; color:var(--cyan-bright); font-size:0.78rem; cursor:pointer; text-decoration:underline;">
+              + Enter Coordinates Manually
+            </button>
+            <button class="btn-full" id="btnDismissLocation" style="background:transparent; color:var(--text-dim); font-size:0.78rem; padding:0.2rem; border:none; width:auto;">
+              Dismiss
+            </button>
+          </div>
+
+          <div id="manualCoordsContainer" style="display:none; grid-template-columns:1fr 1fr auto; gap:0.5rem; margin-top:0.5rem; align-items:center;">
+            <input type="number" step="0.0001" id="manualLatInput" placeholder="Latitude" class="form-control" style="font-size:0.8rem; padding:0.35rem 0.5rem;">
+            <input type="number" step="0.0001" id="manualLngInput" placeholder="Longitude" class="form-control" style="font-size:0.8rem; padding:0.35rem 0.5rem;">
+            <button type="button" id="btnApplyManualCoords" class="btn-header primary" style="font-size:0.8rem; padding:0.35rem 0.65rem;">Pair</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL 2: AUTHENTICATION (LOGIN / REGISTER)
+       ========================================================== -->
+  <div class="modal-backdrop" id="authModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Twin Authentication System
+        </h3>
+        <button class="modal-close-btn" id="closeAuthModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Tabs -->
+        <div class="auth-tab-row">
+          <div class="auth-tab active" id="tabLogin">Operator Login</div>
+          <div class="auth-tab" id="tabRegister">Register New User</div>
+        </div>
+
+        <div id="authErrorMsg" style="color:var(--rose); font-size:0.82rem; margin-bottom:1rem; min-height:16px;"></div>
+
+        <!-- Login Form -->
+        <form id="formLogin">
+          <div class="form-group">
+            <label class="form-label">Username or Email</label>
+            <input type="text" class="form-control" id="loginUsername" placeholder="e.g. admin or operator" required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn-full primary">Authenticate Session</button>
+
+          <!-- 1-Click Demo Fill -->
+          <div class="demo-credentials-row">
+            <button type="button" class="btn-demo" id="btnDemoAdmin">Quick Fill: Admin</button>
+            <button type="button" class="btn-demo" id="btnDemoOperator">Quick Fill: Operator</button>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="formRegister" style="display:none;">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="regFullName" placeholder="Dr. Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" id="regUsername" placeholder="janedoe" required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="regEmail" placeholder="jane@twin.env" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password (min 6 characters)</label>
+            <input type="password" class="form-control" id="regPassword" placeholder="••••••••" required minlength="6" autocomplete="new-password">
+          </div>
+          <div class="form-group">
+            <label class="form-label">System Role</label>
+            <select class="form-control" id="regRole">
+              <option value="OPERATOR">Environmental Operator</option>
+              <option value="RESEARCHER">Atmospheric Researcher</option>
+              <option value="ADMIN">System Administrator</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-full primary">Create Account & Authorize</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL 3: ADD SENSOR NODE
+       ========================================================== -->
+  <div class="modal-backdrop" id="addNodeModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M12 8v8M8 12h8"></path>
+          </svg>
+          Register Environmental Node
+        </h3>
+        <button class="modal-close-btn" id="closeAddNodeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="formAddNode">
+          <div class="form-group">
+            <label class="form-label">Node Identifier</label>
+            <input type="text" class="form-control" id="newStationId" placeholder="e.g. NODE-EAST-06">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Station Name</label>
+            <input type="text" class="form-control" id="newStationName" placeholder="e.g. East Delta Biosphere Station" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Zone Typology</label>
+            <select class="form-control" id="newStationZone">
+              <option value="URBAN_CORE">Urban Core (High Density)</option>
+              <option value="INDUSTRIAL_PARK">Industrial Park (Manufacturing)</option>
+              <option value="FOREST_RESERVE">Forest Reserve (Botanical)</option>
+              <option value="SUBURBAN_VALLEY">Suburban Valley (Residential)</option>
+              <option value="COASTAL_BASIN">Coastal Basin (Wetlands)</option>
+            </select>
+          </div>
+          <div style="grid-template-columns:1fr 1fr; gap:0.75rem; display:grid;">
+            <div class="form-group">
+              <label class="form-label">Latitude</label>
+              <input type="number" step="0.0001" class="form-control" id="newStationLat" value="28.5800" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Longitude</label>
+              <input type="number" step="0.0001" class="form-control" id="newStationLng" value="77.3000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sensor Cluster Description</label>
+            <input type="text" class="form-control" id="newStationDesc" placeholder="e.g. High-altitude solar-powered air monitoring unit">
+          </div>
+          <button type="submit" class="btn-full primary">Register Twin Sensor Node</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL 4: INTERACTIVE GUIDED PRODUCT TOUR
+       ========================================================== -->
+  <div class="tour-overlay" id="productTourOverlay">
+    <div class="tour-card">
+      <span class="tour-step-badge" id="tourStepBadge">Step 1 of 6 • Welcome</span>
+      <h3 class="tour-title" id="tourStepTitle">Welcome to AETHERIS Earth Twin</h3>
+      <p class="tour-desc" id="tourStepDesc">
+        AETHERIS connects real-time physical IoT weather & air sensors with a live 2.5D predictive atmospheric simulation model.
+      </p>
+
+      <div class="tour-notice-box" id="tourStepNotice">
+        You can toggle between Product Showcase, Citizen View, and the Advanced Twin anytime.
+      </div>
+
+      <div class="tour-actions-row">
+        <div class="tour-dots" id="tourDotsContainer">
+          <!-- Dots rendered dynamically -->
+        </div>
+
+        <div style="display:flex; gap:0.5rem; align-items:center;">
+          <button class="btn-demo" id="tourBtnSkip">Skip Tour</button>
+          <button class="btn-header" id="tourBtnPrev" style="display:none;">Back</button>
+          <button class="btn-header primary" id="tourBtnNext">Next Step →</button>
+          <button class="btn-header primary" id="tourBtnFinish" style="display:none;">Finish Tour 🎉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL 5: EXECUTIVE ENVIRONMENTAL AUDIT REPORT (PRINT / PDF)
+       ========================================================== -->
+  <div class="modal-backdrop" id="executiveReportModal">
+    <div class="report-modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          Certified Environmental Audit Report
+        </h3>
+        <button class="modal-close-btn" id="closeReportModal">&times;</button>
+      </div>
+
+      <div class="report-doc-body">
+        <div class="report-cert-header">
+          <div>
+            <div style="font-family:var(--font-display); font-size:1.3rem; font-weight:900; color:var(--cyan-bright);">
+              AETHERIS ENVIRONMENTAL TELEMETRY AUDIT
+            </div>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">
+              ISO 14001:2015 & EPA Ambient Air Quality Compliance Certification
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:0.75rem; color:var(--text-dim);">CERTIFICATE REF</div>
+            <div style="font-family:var(--font-tech); font-weight:700; color:#fff; font-size:0.95rem;">AETH-AUD-2026-X89</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; font-size:0.85rem; margin-bottom:1.25rem;">
+          <div>
+            <span style="color:var(--text-muted);">Audited Monitoring Station:</span>
+            <div style="font-weight:700; color:#fff;" id="repStationName">Metro Central Hub (NODE-METRO-01)</div>
+          </div>
+          <div>
+            <span style="color:var(--text-muted);">Operating Typology Zone:</span>
+            <div style="font-weight:700; color:var(--cyan-bright);" id="repZone">URBAN CORE</div>
+          </div>
+          <div>
+            <span style="color:var(--text-muted);">Audit Generated Timestamp:</span>
+            <div style="color:var(--text-main);" id="repDate">Mon, 05 Oct 2026 11:20:00 GMT</div>
+          </div>
+          <div>
+            <span style="color:var(--text-muted);">Auditing Officer / Role:</span>
+            <div style="color:var(--text-main);" id="repAuditor">Chief Environmental Operator (Certified)</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:0.75rem 1rem; margin-bottom:1.25rem; font-size:0.85rem;">
+          <span style="color:var(--text-muted);">Geospatial Position:</span>
+          <span style="color:#fff; font-weight:600; margin-left:0.5rem;" id="repCoords">28.6139° N, 77.2090° E • Elevation: 216m</span>
+        </div>
+
+        <div style="margin-bottom:0.75rem; font-family:var(--font-tech); font-weight:700; font-size:1.05rem; color:#fff;">
+          Continuous Telemetry Audit Readings:
+        </div>
+
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Environmental Parameter</th>
+              <th>Measured Telemetry</th>
+              <th>National EPA Baseline</th>
+              <th>Compliance State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Air Quality Index (AQI)</td>
+              <td id="repAqi">142 (Moderate)</td>
+              <td>&le; 100 Permissible</td>
+              <td><span style="color:var(--amber); font-weight:600;">Monitor</span></td>
+            </tr>
+            <tr>
+              <td>PM2.5 Fine Particles</td>
+              <td id="repPm25">62.4 µg/m³</td>
+              <td>&le; 35.0 µg/m³ (24hr avg)</td>
+              <td><span style="color:var(--rose); font-weight:600;">Action Suggested</span></td>
+            </tr>
+            <tr>
+              <td>PM10 Inhalable Particles</td>
+              <td id="repPm10">118.0 µg/m³</td>
+              <td>&le; 150.0 µg/m³</td>
+              <td><span style="color:var(--emerald); font-weight:600;">Compliant</span></td>
+            </tr>
+            <tr>
+              <td>Ambient Temperature</td>
+              <td id="repTemp">29.5 °C</td>
+              <td>Optimal Comfort Band</td>
+              <td><span style="color:var(--emerald); font-weight:600;">Nominal</span></td>
+            </tr>
+            <tr>
+              <td>Relative Humidity</td>
+              <td id="repHum">48.0 %</td>
+              <td>30% - 70% Saturation</td>
+              <td><span style="color:var(--emerald); font-weight:600;">Compliant</span></td>
+            </tr>
+            <tr>
+              <td>Carbon Dioxide (CO2)</td>
+              <td id="repCo2">540 ppm</td>
+              <td>&le; 1,000 ppm Baseline</td>
+              <td><span style="color:var(--emerald); font-weight:600;">Nominal</span></td>
+            </tr>
+            <tr>
+              <td>Acoustic Noise Pressure</td>
+              <td id="repNoise">68.5 dB</td>
+              <td>&le; 75.0 dB (Daytime Urban)</td>
+              <td><span style="color:var(--emerald); font-weight:600;">Compliant</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="background:rgba(6,182,212,0.06); border:1px solid var(--border-glow); border-radius:var(--radius-sm); padding:1rem; margin-top:1.25rem;">
+          <div style="font-family:var(--font-tech); font-weight:700; color:var(--cyan-bright); margin-bottom:0.25rem;">
+            AUDITOR CERTIFICATION STATUS:
+          </div>
+          <div id="repStatus" style="font-size:0.85rem; color:#fff;">
+            COMPLIANT (All continuous environmental indicators verified within permissible regulatory tolerances)
+          </div>
+        </div>
+      </div>
+
+      <div class="report-actions-bar" style="padding:1.25rem 2.5rem; background:rgba(7,11,24,0.95); border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:0.78rem; color:var(--text-dim);">AETHERIS Digital Environment Twin • Cryptographically Verified Stream</span>
+        <div style="display:flex; gap:0.75rem;">
+          <button class="btn-demo" id="btnReportJson">Download JSON Audit</button>
+          <button class="btn-header primary" id="btnReportPrint">🖨️ Print / Save PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================
+       INDIAN BUSINESS SUBSCRIPTION & GST BILLING MODAL
+       ========================================================== -->
+  <div class="modal-overlay" id="businessSubscriptionModal">
+    <div class="sub-modal-window">
+      <div class="modal-header">
+        <div>
+          <div style="font-size:0.75rem; color:var(--amber); font-family:var(--font-tech); font-weight:700; display:flex; align-items:center; gap:0.4rem;">
+            <span>🇮🇳 BHARAT ENTERPRISE & INDUSTRIAL SAAS</span>
+            <span style="background:rgba(245,158,11,0.15); border:1px solid var(--amber); padding:1px 6px; border-radius:4px; font-size:0.65rem;">18% GST ITC ELIGIBLE</span>
+          </div>
+          <div class="modal-title" style="margin-top:2px;">AETHERIS बिज़नेस सब्सक्रिप्शन व टैक्स चालान</div>
+        </div>
+        <button class="modal-close-btn" id="closeSubscriptionModal">&times;</button>
+      </div>
+
+      <!-- Checkout Form View -->
+      <div class="sub-modal-body" id="subCheckoutFormView">
+        <!-- Left Side: Config & Company Details -->
+        <div>
+          <div style="font-family:var(--font-tech); font-weight:700; font-size:0.95rem; color:#fff; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+            <span>1. प्लान व बिलिंग चक्र चुनें (Choose Plan)</span>
+          </div>
+
+          <div class="sub-plan-selector-grid">
+            <div class="sub-plan-opt active" id="subOptPro" data-sub-plan="pro">
+              <span class="sub-plan-badge">सर्वाधिक लोकप्रिय</span>
+              <div style="font-weight:700; color:#fff; font-size:0.95rem;">Smart Business Pro</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">Up to 50 IoT nodes • 2.5D Canvas</div>
+              <div style="font-size:1.15rem; font-weight:800; color:var(--cyan-bright); margin-top:0.5rem;" id="subOptProPrice">₹6,999/माह</div>
+            </div>
+
+            <div class="sub-plan-opt" id="subOptEnterprise" data-sub-plan="enterprise">
+              <div style="font-weight:700; color:#fff; font-size:0.95rem;">Metropolis Sovereign</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">Unlimited nodes • On-Prem / GeM</div>
+              <div style="font-size:1.15rem; font-weight:800; color:var(--amber); margin-top:0.5rem;" id="subOptEntPrice">₹15,999/माह (अधिकतम ₹20,000)</div>
+            </div>
+          </div>
+
+          <!-- Billing Frequency for Modal -->
+          <div class="billing-toggle-wrapper" style="margin-bottom:1.25rem; justify-content:flex-start;">
+            <div class="billing-switch">
+              <button class="billing-switch-btn" id="subModalBillingMonthly">मासिक (Monthly)</button>
+              <button class="billing-switch-btn active" id="subModalBillingAnnual">वार्षिक (Annual - 20% छूट)</button>
+            </div>
+          </div>
+
+          <!-- Company & GST Details -->
+          <div style="font-family:var(--font-tech); font-weight:700; font-size:0.95rem; color:#fff; margin:1rem 0 0.75rem 0;">
+            2. भारतीय व्यावसायिक विवरण (Business & GST Details)
+          </div>
+
+          <div class="sub-form-group">
+            <label for="subCompanyName">कंपनी / संस्थान का नाम (Company / Facility Name)</label>
+            <input type="text" id="subCompanyName" class="sub-form-input" placeholder="e.g. Tata Steel Ltd / DLF CyberPark / Apollo Hospitals" value="EcoSmart Industrial Park Ltd">
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div class="sub-form-group">
+              <label for="subStateSelect">राज्य / केंद्र शासित प्रदेश (State)</label>
+              <select id="subStateSelect" class="sub-form-select">
+                <option value="27-MH" selected>Maharashtra [27]</option>
+                <option value="07-DL">Delhi NCR [07]</option>
+                <option value="29-KA">Karnataka [29]</option>
+                <option value="33-TN">Tamil Nadu [33]</option>
+                <option value="36-TG">Telangana [36]</option>
+                <option value="24-GJ">Gujarat [24]</option>
+                <option value="09-UP">Uttar Pradesh [09]</option>
+                <option value="19-WB">West Bengal [19]</option>
+                <option value="03-PB">Punjab [03]</option>
+                <option value="08-RJ">Rajasthan [08]</option>
+              </select>
+            </div>
+
+            <div class="sub-form-group">
+              <label for="subGstinInput">GSTIN नंबर (15-Digit GST Number)</label>
+              <input type="text" id="subGstinInput" class="sub-form-input" placeholder="27AAACE1234F1Z5" value="27AAACT2727Q1ZB" maxlength="15">
+            </div>
+          </div>
+
+          <!-- Payment Mode Selection -->
+          <div style="font-family:var(--font-tech); font-weight:700; font-size:0.95rem; color:#fff; margin:1.25rem 0 0.75rem 0;">
+            3. भुगतान माध्यम (Select Payment Mode)
+          </div>
+
+          <div class="sub-payment-tabs">
+            <button class="sub-payment-tab-btn active" data-sub-pay="upi">
+              ⚡ UPI (GPay/PhonePe)
+            </button>
+            <button class="sub-payment-tab-btn" data-sub-pay="netbanking">
+              🏦 Net Banking (SBI/HDFC)
+            </button>
+            <button class="sub-payment-tab-btn" data-sub-pay="card">
+              💳 Business Cards
+            </button>
+            <button class="sub-payment-tab-btn" data-sub-pay="gem">
+              🏛️ GeM / NEFT Challan
+            </button>
+          </div>
+
+          <!-- Dynamic Payment Details Box -->
+          <div id="subPaymentContent" style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:1rem;">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- Right Side: Live GST Tax Calculation & Confirmation -->
+        <div>
+          <div class="sub-invoice-card">
+            <div style="font-family:var(--font-tech); font-weight:700; font-size:1rem; color:#fff; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem; margin-bottom:0.75rem; display:flex; justify-content:space-between; align-items:center;">
+              <span>टैक्स इनवॉइस सारांश (Invoice Summary)</span>
+              <span style="font-size:0.75rem; color:var(--cyan-bright); font-family:var(--font-mono);">SAC: 998313</span>
+            </div>
+
+            <div class="sub-inv-row">
+              <span id="subInvPlanLabel">Smart Business Pro (वार्षिक)</span>
+              <span id="subInvBasePrice">₹1,79,988</span>
+            </div>
+
+            <div class="sub-inv-row" id="subInvDiscountRow">
+              <span style="color:var(--emerald);">वार्षिक छूट (20% Savings)</span>
+              <span style="color:var(--emerald);">- ₹44,997</span>
+            </div>
+
+            <div class="sub-inv-row">
+              <span>कर योग्य मूल्य (Taxable Amount)</span>
+              <span id="subInvTaxableAmount" style="color:#fff; font-weight:600;">₹1,79,988</span>
+            </div>
+
+            <div class="sub-inv-row" id="subInvCgstRow">
+              <span>केंद्रीय GST (CGST @ 9%)</span>
+              <span id="subInvCgstVal">₹16,198.92</span>
+            </div>
+
+            <div class="sub-inv-row" id="subInvSgstRow">
+              <span>राज्य GST (SGST @ 9%)</span>
+              <span id="subInvSgstVal">₹16,198.92</span>
+            </div>
+
+            <div class="sub-inv-row" id="subInvIgstRow" style="display:none;">
+              <span>एकीकृत GST (IGST @ 18%)</span>
+              <span id="subInvIgstVal">₹32,397.84</span>
+            </div>
+
+            <div class="sub-inv-row total">
+              <span>कुल देय राशि (Total Payable)</span>
+              <span id="subInvTotalVal" style="color:var(--cyan-bright);">₹2,12,385.84</span>
+            </div>
+
+            <div class="sub-itc-callout">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <div>
+                <strong>100% ITC इनपुट टैक्स क्रेडिट:</strong> आपकी कंपनी को पूरे <span id="subInvItcVal">₹32,398</span> का क्रेडिट GSTR-3B में वापस मिलेगा। वास्तविक शुद्ध लागत केवल <span id="subInvNetCost">₹1,79,988</span> होगी।
+              </div>
+            </div>
+
+            <button class="btn-full primary" id="btnCompleteSubscription" style="margin-top:1rem; padding:0.9rem; font-size:1rem; font-weight:700; box-shadow:0 0 20px var(--cyan-glow);">
+              ✓ सदस्यता सक्रिय करें व GST इनवॉइस प्राप्त करें
+            </button>
+
+            <div style="font-size:0.75rem; color:var(--text-dim); text-align:center; margin-top:0.75rem;">
+              🔒 256-Bit SSL Encrpyted • ISO 14001 Compliant • RBI / NPCI Verified
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success View (Hidden until payment completes) -->
+      <div id="subSuccessView" style="display:none; padding:3rem 2rem; text-align:center;">
+        <div style="font-size:3.5rem; margin-bottom:1rem;">🎉</div>
+        <h2 style="font-family:var(--font-display); font-size:1.75rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">
+          सदस्यता सफलतापूर्वक सक्रिय हो गई! (Subscription Activated)
+        </h2>
+        <p style="color:var(--text-muted); font-size:0.95rem; max-width:550px; margin:0 auto 1.5rem auto;">
+          आपका एंटरप्राइज़ डिजिटल ट्विन नोड्स आवंटन और CPCB कंप्लायंस इंजन सक्रिय कर दिया गया है। GST टैक्स चालान जनरेट हो गया है।
+        </p>
+
+        <div style="max-width:500px; margin:0 auto 2rem auto; background:rgba(6,182,212,0.08); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:1.25rem; text-align:left;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.85rem;">
+            <span style="color:var(--text-muted);">टैक्स इनवॉइस नंबर (Invoice No):</span>
+            <span style="color:#fff; font-weight:700; font-family:var(--font-mono);" id="subSuccessInvNo">INV-AETH-2026-IN8842</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.85rem;">
+            <span style="color:var(--text-muted);">लाइसेंस की (Enterprise Key):</span>
+            <span style="color:var(--cyan-bright); font-weight:700; font-family:var(--font-mono);" id="subSuccessKey">AETH-PRO-IN-2026-LIVE</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <span style="color:var(--text-muted);">सक्रिय नोड्स कोटा:</span>
+            <span style="color:var(--emerald); font-weight:700;" id="subSuccessQuota">50 Dedicated Sensor Nodes (Active)</span>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <button class="btn-demo" id="btnDownloadGstInvoice">🖨️ GST टैक्स चालान डाउनलोड करें</button>
+          <button class="btn-header primary" id="btnLaunchSubscribedTwin">🚀 लाइव डिजिटल ट्विन लॉन्च करें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/twin-canvas.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/location.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
