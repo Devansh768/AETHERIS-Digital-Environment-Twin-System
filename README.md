@@ -76,6 +76,23 @@ Establish system scope, mathematical specifications, UI/UX wireframes, database 
 
 ---
 
+## 📐 Week 2 Milestone: Mathematical Proofs, Design Tokens & Database Modeling (July 13 – July 19)
+
+### 📌 Overall Week 2 Objective
+Formulate the core mathematical models (spherical distance, forward azimuth, coordinate projection, and sensor random walk drift), build the design token system and color palette in CSS, and establish the 3NF normalized database Entity-Relationship (ER) model.
+
+### 📋 Member-Wise Tasks & Deliverables
+
+| Team Member | Domain / Module | Week 2 Tasks & Focus Areas | Deliverable |
+| :--- | :--- | :--- | :--- |
+| **Ishita Sinha** | **Frontend Canvas & Computer Graphics** | • Formulated coordinate projection formula converting geographic coordinates $(\text{Lat}, \text{Lng})$ into Canvas $(X, Y)$ screen pixel space.<br>• Designed particle physics equations: position updates ($x = x + v_x, y = y + v_y$), wind velocity vector drift, and alpha opacity lifecycle decay. | **Coordinate Mapping Formulas & Particle Physics Algorithm Document** |
+| **Dhruv Jain** | **Frontend UI/UX & Web Dashboard** | • Created project design system tokens in CSS custom variables (`:root` in `frontend/css/style.css`).<br>• Configured typography using modern monospace and clean sans-serif fonts (Outfit, Inter, JetBrains Mono).<br>• Defined neon cybernetic accent colors: Cyan (`#00f0ff`), Amber (`#ffb700`), Emerald (`#00ff88`), and Crimson (`#ff0055`). | **UI Design Style Guide & CSS Variables Token Sheet** |
+| **Devansh Joshi** | **Backend Services & Geospatial Algorithms** | • Derived the mathematical **Haversine Distance Formula** ($R = 6371\text{ km}$, $\phi$ and $\lambda$ in radians) for spherical Earth curvature.<br>• Formulated the **Forward Azimuth (Compass Bearing)** formula ($\theta = \text{atan2}(\dots)$).<br>• Conducted mathematical algorithm proofs and sample coordinate conversion verifications. | **Mathematical Algorithm Proofs & Coordinate Conversion Logic** |
+| **Devansh Mittal** | **Backend Simulation & Automated Alerting** | • Formulated the **Weighted Smooth Random Walk** equation for realistic sensor variation: $\text{Value}_t = (0.85 \cdot \text{Value}_{t-1}) + (0.15 \cdot \text{Baseline}) + \Delta_{\text{random}}$.<br>• Prevented erratic data jumps while maintaining organic, continuous environmental drift. | **Mathematical Sensor Drift Algorithm Specification** |
+| **Garv Kumar** | **Database Architecture & Application** | • Designed Entity-Relationship (ER) diagram with 4 core tables: `users`, `stations`, `telemetry_records`, and `environmental_alerts`.<br>• Applied 3rd Normal Form (3NF) normalization to eliminate data redundancy.<br>• Defined relationships ($1:\text{N}$ from stations to telemetry records and alerts). | **Final Database ER Diagram & Table Schema Architecture** |
+
+---
+
 The database schema is provided in [`database/schema.sql`](file:///e:/digital%20twin%20system/database/schema.sql).
 
 ### Tables:
