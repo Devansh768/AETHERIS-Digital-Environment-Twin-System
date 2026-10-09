@@ -15,7 +15,7 @@ Week 2 of the AETHERIS project transitioned from planning into formal mathematic
 | **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 7597934912 |
 | **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 6375536662 |
 | **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 8239361149 |
-| **devansh-mittal96** | — | — | — |
+| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 7412894068 |
 | **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 9241970138 |
 
 ---
@@ -72,7 +72,7 @@ Week 2 of the AETHERIS project transitioned from planning into formal mathematic
 
 ---
 
-### 5. devansh-mittal96
+### 5. Garv Kumar
 - **Role / Domain:** Database Architecture & Application
 - **Core Focus:** Entity-Relationship (ER) Modeling & 3NF Normalization
 - **Weekly Tasks:**
@@ -95,4 +95,4 @@ Week 2 of the AETHERIS project transitioned from planning into formal mathematic
 | **Dhruv Jain** | Frontend UI/UX & Web Dashboard | UI Design Style Guide & CSS Token Sheet | ✅ Completed |
 | **Devansh Joshi** | Backend Services & Geospatial Math | Haversine & Bearing Proofs Algorithm Document | ✅ Completed |
 | **Devansh Mittal** | Backend Simulation & Automated Alerting | Weighted Random Walk Drift Algorithm Spec | ✅ Completed |
-| **devansh-mittal96** | Database Architecture & Security | 3NF Database ER Diagram & Schema Architecture | ✅ Completed |
+| **Garv Kumar** | Database Architecture & Security | 3NF Database ER Diagram & Schema Architecture | ✅ Completed |

@@ -9,8 +9,10 @@ import com.digitaltwin.environment.repository.EnvironmentalAlertRepository;
 import com.digitaltwin.environment.repository.StationRepository;
 import com.digitaltwin.environment.repository.TelemetryRecordRepository;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -55,6 +57,14 @@ public class TelemetryService {
     }
 
     public Map<String, Object> triggerSimulation(SimulationRequest req) {
+        String targetStationId = req.getStationId();
+        if (targetStationId != null
+                && !"ALL".equalsIgnoreCase(targetStationId)
+                && stationRepository.findAll().stream()
+                        .noneMatch(station -> station.getId().equalsIgnoreCase(targetStationId))) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Station not found: " + targetStationId);
+        }
+
         this.activeScenario = (req.getScenario() != null) ? req.getScenario().toUpperCase() : "NORMAL";
         this.scenarioIntensity = (req.getIntensity() != null) ? req.getIntensity() : 1.0;
         int duration = (req.getDurationMinutes() != null) ? req.getDurationMinutes() : 15;

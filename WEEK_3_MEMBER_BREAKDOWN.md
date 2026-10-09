@@ -15,7 +15,7 @@ Week 3 centered on establishing visual environmental layer palettes, lightweight
 | **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 7597934912 |
 | **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 6375536662 |
 | **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 8239361149 |
-| **devansh-mittal96** | — | — | — |
+| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 7412894068 |
 | **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 9241970138 |
 
 ---
@@ -76,7 +76,7 @@ Week 3 centered on establishing visual environmental layer palettes, lightweight
 
 ---
 
-### 5. devansh-mittal96
+### 5. Garv Kumar
 - **Role / Domain:** Database Architecture & Application
 - **Core Focus:** Production MySQL Schema & Time-Series Indexing
 - **Weekly Tasks:**
@@ -95,4 +95,4 @@ Week 3 centered on establishing visual environmental layer palettes, lightweight
 | **Dhruv Jain** | Frontend UI/UX & Web Dashboard | High-Fidelity Mockups & SVG Asset Kit | ✅ Completed |
 | **Devansh Joshi** | Backend Services & Geospatial Math | DTO Classes & Cardinal Direction Mapping Table | ✅ Completed |
 | **Devansh Mittal** | Backend Simulation & Automated Alerting | Zone Baseline Matrix & Simulation DTOs | ✅ Completed |
-| **devansh-mittal96** | Database Architecture & Security | Complete & Executable `database/schema.sql` | ✅ Completed |
+| **Garv Kumar** | Database Architecture & Security | Complete & Executable `database/schema.sql` | ✅ Completed |

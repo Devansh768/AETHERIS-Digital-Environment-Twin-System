@@ -17,7 +17,7 @@
 | **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 7597934912 |
 | **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 6375536662 |
 | **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 8239361149 |
-| **devansh-mittal96** | — | — | — |
+| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 7412894068 |
 | **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 9241970138 |
 
 ### Module Ownership & Primary Responsibilities
@@ -28,7 +28,7 @@
 | **Ishita Sinha** | Frontend Engineer | Canvas 2.5D & Graphics Engine | 2.5D Isometric Terrain, 90+ Atmospheric Particle Fluid Engine, Custom Cubic Bézier Spline Charts |
 | **Dhruv Jain** | UI/UX Engineer | Command Center & Dashboard | Cybernetic Glassmorphism UI, Responsive CSS Grid, 8 Live KPI Telemetry Cards, Region Filters |
 | **Devansh Mittal** | Backend Engineer | Simulation & Alerting Engine | Weighted Random Walk Sensor Drift, 4 "What-If" Hazard Scenarios, Automated EPA Safety Alert Rules |
-| **devansh-mittal96** | Database Engineer | Architecture & Security | 3NF MySQL Relational Schema, Spring Data JPA Repositories, Salted SHA-256 Auth & RBAC Security |
+| **Garv Kumar** | Database Engineer | Architecture & Security | 3NF MySQL Relational Schema, Spring Data JPA Repositories, Salted SHA-256 Auth & RBAC Security |
 
 ---
 
@@ -150,9 +150,10 @@ graph TD
 * **Module 4: Background Simulation Heartbeat & Hazard Injection Engine** (*Devansh Mittal*)
   * Spring `@Scheduled(fixedRate = 6000)` background scheduler breathing organic variation into all 9 environmental parameters.
   * Weighted Smooth Random Walk algorithm ($\text{Value}_t = 0.85 \cdot \text{Value}_{t-1} + 0.15 \cdot \text{Baseline} + \Delta_{\text{random}}$) tailored across 4 distinct environmental zones (*Urban Core, Industrial Park, Forest Reserve, Coastal Basin*).
-  * 4 interactive "What-If" hazard scenarios (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`) with intensity multipliers and automatic alert creation.
+  * Interactive "What-If" scenarios (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `STORM_FRONT`, `NORMAL`) with intensity multipliers and automatic alert creation.
+  * Simulation requests validate scenario names, station IDs, intensity bounds (0.5–2.5), and positive durations; unknown target stations return a not-found response.
 
-* **Module 5: Relational Persistence & Security Infrastructure** (*devansh-mittal96*)
+* **Module 5: Relational Persistence & Security Infrastructure** (*Garv Kumar*)
   * 3NF normalized relational schema managing users, stations, telemetry records, and hazard alerts.
   * Spring Data JPA entity mapping with high-performance composite indexing on `station_id` and `recorded_at`.
   * Resilient dual-database strategy via `DataSourceConfig.java` providing zero-config automatic failover to H2 in-memory storage.
@@ -442,7 +443,7 @@ cd "e:\digital twin system\backend"
 | `GET` | `/api/stations/nearest?lat={lat}&lng={lng}` | Haversine distance, bearing, and nearest station pairing |
 | `GET` | `/api/telemetry/live` | Stream live telemetry across all active stations |
 | `GET` | `/api/telemetry/history/{stationId}` | Fetch historical time-series telemetry records |
-| `POST` | `/api/simulation/trigger` | Inject scenario (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`) |
+| `POST` | `/api/simulation/trigger` | Inject scenario (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `STORM_FRONT`, `NORMAL`) |
 | `GET` | `/api/alerts` | Fetch threshold hazard alerts (`?unacknowledgedOnly=true`) |
 | `POST` | `/api/alerts/{id}/acknowledge` | Acknowledge active hazard alert |
 
