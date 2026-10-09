@@ -150,8 +150,7 @@ graph TD
 * **Module 4: Background Simulation Heartbeat & Hazard Injection Engine** (*Devansh Mittal*)
   * Spring `@Scheduled(fixedRate = 6000)` background scheduler breathing organic variation into all 9 environmental parameters.
   * Weighted Smooth Random Walk algorithm ($\text{Value}_t = 0.85 \cdot \text{Value}_{t-1} + 0.15 \cdot \text{Baseline} + \Delta_{\text{random}}$) tailored across 4 distinct environmental zones (*Urban Core, Industrial Park, Forest Reserve, Coastal Basin*).
-  * Interactive "What-If" scenarios (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `STORM_FRONT`, `NORMAL`) with intensity multipliers and automatic alert creation.
-  * Simulation requests validate scenario names, station IDs, intensity bounds (0.5–2.5), and positive durations; unknown target stations return a not-found response.
+  * 4 interactive "What-If" hazard scenarios (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`) with intensity multipliers and automatic alert creation.
 
 * **Module 5: Relational Persistence & Security Infrastructure** (*Garv Kumar*)
   * 3NF normalized relational schema managing users, stations, telemetry records, and hazard alerts.
@@ -443,7 +442,7 @@ cd "e:\digital twin system\backend"
 | `GET` | `/api/stations/nearest?lat={lat}&lng={lng}` | Haversine distance, bearing, and nearest station pairing |
 | `GET` | `/api/telemetry/live` | Stream live telemetry across all active stations |
 | `GET` | `/api/telemetry/history/{stationId}` | Fetch historical time-series telemetry records |
-| `POST` | `/api/simulation/trigger` | Inject scenario (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `STORM_FRONT`, `NORMAL`) |
+| `POST` | `/api/simulation/trigger` | Inject scenario (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`) |
 | `GET` | `/api/alerts` | Fetch threshold hazard alerts (`?unacknowledgedOnly=true`) |
 | `POST` | `/api/alerts/{id}/acknowledge` | Acknowledge active hazard alert |
 
