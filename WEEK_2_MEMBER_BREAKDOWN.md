@@ -8,6 +8,18 @@ Week 2 of the AETHERIS project transitioned from planning into formal mathematic
 
 ---
 
+### 📋 Team Members
+
+| Name | Enrollment | Email | Mobile |
+| :--- | :--- | :--- | :--- |
+| **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 7597934912 |
+| **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 6375536662 |
+| **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 8239361149 |
+| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 7412894068 |
+| **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 9241970138 |
+
+---
+
 ## 👥 Member-Wise Breakdown & Tasks
 
 ### 1. Ishita Sinha
