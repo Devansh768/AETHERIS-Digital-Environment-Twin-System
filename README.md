@@ -1,118 +1,208 @@
-# AETHERIS — Digital Environment Twin System
-
-A full-stack, real-time **100% Software-Powered Digital Environment Twin System** designed for monitoring urban microclimates, industrial particulate dispersion, and ecological bio-reserves with **zero hardware and zero IoT devices required**. The system couples an interactive **HTML5 Canvas 2.5D atmospheric fluid simulation twin** with a **Java Spring Boot backend**, **MySQL database**, secure **JWT/session authentication**, and **browser geolocation proximity pairing**.
+# AETHERIS: Real-Time 2.5D Digital Environment Twin System
 
 ---
 
-## 🌟 Key Features & SaaS Product Suite
+## Week 1
 
-1. **3-in-1 Universal Experience Architecture**:
-   - **🌐 Product Showcase & Solutions Landing Page**:
-     - High-converting, modern SaaS product presentation with hero section, live telemetry trust metrics, and an interactive mini-twin sandbox widget.
-     - 4 Core Product Pillars: 2.5D Atmospheric Fluid Simulation, Sub-10m GPS Geodesic Radar Sync, AI 'What-If' Hazard Injection, and Automated ESG Compliance.
-     - Interactive Industry Use Cases: Smart Municipalities, Heavy Industry, Ecological Bio-Reserves, and Corporate Campuses.
-     - Transparent SaaS Pricing Tiers: Community (₹0), Smart Business Pro (₹299/mo annual / ₹399/mo), and Metropolis Sovereign (₹999/mo annual / ₹1,299/mo) with interactive billing cycle toggle and GST compliance.
-     - 100% Zero-Hardware Model: Eliminates all physical IoT sensor deployments, microcontrollers, and field maintenance by synthesizing meteorological models, satellite feeds, and mathematical fluid dynamics.
-     - Testimonials, Enterprise Security badges (ISO 14001, EPA AirNow, SOC-2, AES-256), and interactive FAQ accordion.
-   - **🌿 Citizen & Business Friendly Dashboard**:
-     - Clean, human-first environmental intelligence designed for citizens, schools, and business operators.
-     - **Clean Air Score**: Animated SVG circular progress dial displaying an overall cleanliness score (0 to 100).
-     - **Dynamic Plain-English Health Verdicts**: Contextual health advisories (e.g. Crisp & Pristine, Moderate, Sensitive Warning, Hazardous) with actionable tips for outdoor sports, jogging, window ventilation, and UV protection.
-     - 6 Human-friendly metric cards (Air Purity, Real-Feel Temperature, Solar UV, Natural Breeze, Acoustic Serenity, and Atmospheric Freshness).
-     - Actionable daily lifestyle and facility HVAC recommendations.
-     - Visual Card-Based Station Selector with live state indicators.
-   - **⚡ Advanced Digital Twin Engineering Core**:
-     - High-fidelity 2.5D interactive HTML5 Canvas terrain engine with real-time vector wind currents, PM2.5/PM10 particulate dispersion, and thermal gradients.
-     - 3 Canvas Visualization Modes: Air Dispersion, Thermal Heatmap, and Radar Proximity.
-     - Time-series real-time cubic curve trend charts for AQI and Temperature.
-     - Live KPI gauges with EPA thresholds and unit toggles (°C / °F).
+## Project Administration
 
-2. **Interactive Guided Product Tour**:
-   - Built-in 6-step interactive onboarding walkthrough guiding new users through the view switcher, citizen verdicts, 2.5D fluid engine, GPS pairing radar, and simulation hazard injection.
-   - Accessible anytime via the **Guided Tour** button in the top navigation header.
+* **Project Title:** AETHERIS — Real-Time 2.5D Digital Environment Twin for Microclimate Tracking & Hazard Simulation
+* **Domain:** Environmental Informatics, Cybernetic Simulation & Geospatial Computing
+* **Technology Stack:** Java 17, Spring Boot 3.3.5, Spring Data JPA, MySQL 8.0, In-Memory H2, HTML5 Canvas 2D, Vanilla JavaScript, CSS3 Glassmorphism
 
-3. **Certified Executive Environmental Audit Report (Print / PDF)**:
-   - 1-Click generation of formal, audit-ready compliance certificates conforming to ISO 14001:2015 and National Ambient Air Quality Standards.
-   - Includes certified station metadata, GPS coordinates, comprehensive parameter table, compliance verdict, and browser print-to-PDF formatting (`@media print`).
+### Team Members
 
-4. **Sub-10m GPS Geolocation Pairing Radar**:
-   - High-tech radar sweep popup allowing physical device pairing via browser GPS or state-wise presets.
-   - Calculates geodesic distance using the Haversine formula and live compass bearing.
-   - Projects a dynamic laser pairing beam directly across the digital twin canvas.
-
-5. **Authentication & Multi-Role Access Control**:
-   - Salted SHA-256 password hashing with role authorization (`ADMIN`, `OPERATOR`, `RESEARCHER`).
-   - 1-Click demo credential fill (`admin` / `admin123` or `operator` / `operator123`).
-   - Guards operator actions: adding custom virtual simulation nodes and injecting simulation scenarios.
-
-6. **Digital Twin 'What-If' Hazard Injection Engine**:
-   - Proactively test municipal and industrial response against:
-     - **Heatwave Spike**: Simulates extreme temperature surges and ozone formation.
-     - **Industrial Emission Spike**: Simulates particulate PM2.5 and CO2 surges.
-     - **Cleansing Storm**: Simulates rainfall washing out particulates and cooling ambient air.
-     - **Reset Baseline**: Returns all twin nodes to nominal conditions.
-
-7. **Java Spring Boot 3.3.5 Backend (REST API)**:
-   - High-performance, clean architecture with Spring Data JPA.
-   - Automated background simulation heartbeat (`@Scheduled`) to breathe live variations into telemetry.
-   - Seamless MySQL Database integration with intelligent fallback to in-memory H2.
-
----
-
-## 👥 Week 1 Milestone: Planning & Architecture (July 6 – July 12)
-
-### 📌 Overall Week 1 Objective
-Establish system scope, mathematical specifications, UI/UX wireframes, database entity models, and REST API contracts for the **AETHERIS 2.5D Digital Environment Twin**.
-
-### 📋 Member-Wise Tasks & Deliverables
-
-| Team Member | Domain / Module | Week 1 Tasks & Focus Areas | Deliverable |
+| Name | Enrollment | Email | Mobile |
 | :--- | :--- | :--- | :--- |
-| **Ishita Sinha** | **Frontend Canvas & Computer Graphics** | • Researched 2.5D isometric projection techniques and HTML5 Canvas rendering pipelines.<br>• Formulated graphics technical specifications (Canvas resolution, DPR/HiDPI scaling, locked 60 FPS target).<br>• Sketched visual concepts for the cybernetic terrain grid, sensor beacons, and atmospheric particle flows. | **Graphics Architecture Plan & 2.5D Visual Design Wireframes** |
-| **Dhruv Jain** | **Frontend UI/UX & Web Dashboard** | • Researched cybernetic command-center UI design patterns (glassmorphism, dark obsidian themes, neon telemetry glows).<br>• Drafted low-fidelity UX wireframes for the main layout: header, live digital twin viewport, sensor metric cards, historical chart panels, and scenario control drawer. | **Low-Fidelity Wireframes & Dashboard Layout Blueprint** |
-| **Devansh Joshi** | **Backend Services & Geospatial Algorithms** | • Researched spherical trigonometry and geospatial algorithms for mapping coordinates on Earth's curved surface.<br>• Defined requirements for client GPS proximity detection and station node registration.<br>• Outlined API contracts and JSON Data Transfer Objects (DTOs) for station data. | **Geospatial Specification Document & API Contract Design** |
-| **Devansh Mittal** | **Backend Simulation & Automated Alerting** | • Researched atmospheric dispersion principles, heat-island dynamics, and humidity drift.<br>• Defined safety threshold classifications based on global EPA standards:<br>&nbsp;&nbsp;- Air Quality Index (AQI): Nominal ($< 100$), Unhealthy ($150 - 249$), Critical Hazard ($\ge 250$)<br>&nbsp;&nbsp;- Ambient Temperature: Nominal ($22^\circ\text{C} - 32^\circ\text{C}$), Heat Advisory ($\ge 38^\circ\text{C}$). | **Environmental Simulation Specification & Threshold Standards Document** |
-| **Garv Kumar** | **Database Architecture & Application** | • Analyzed functional requirements and identified data storage needs for real-time sensor metrics, users, stations, and threshold alerts.<br>• Determined database constraints, indexing requirements for time-series queries, and projected data volumes.<br>• Drafted the 4 core entities: `users`, `stations`, `telemetry_records`, and `environmental_alerts`. | **Requirements Specification Document & Draft Database Plan** |
+| **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 7597934912 |
+| **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 6375536662 |
+| **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 8239361149 |
+| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 7412894068 |
+| **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 9241970138 |
 
----
+### Module Ownership & Primary Responsibilities
 
-## 📐 Week 2 Milestone: Mathematical Proofs, Design Tokens & Database Modeling (July 13 – July 19)
-
-### 📌 Overall Week 2 Objective
-Formulate the core mathematical models (spherical distance, forward azimuth, coordinate projection, and sensor random walk drift), build the design token system and color palette in CSS, and establish the 3NF normalized database Entity-Relationship (ER) model.
-
-### 📋 Member-Wise Tasks & Deliverables
-
-| Team Member | Domain / Module | Week 2 Tasks & Focus Areas | Deliverable |
+| Name | Role / Domain | Project Module | Primary Responsibilities |
 | :--- | :--- | :--- | :--- |
-| **Ishita Sinha** | **Frontend Canvas & Computer Graphics** | • Formulated coordinate projection formula converting geographic coordinates $(\text{Lat}, \text{Lng})$ into Canvas $(X, Y)$ screen pixel space.<br>• Designed particle physics equations: position updates ($x = x + v_x, y = y + v_y$), wind velocity vector drift, and alpha opacity lifecycle decay. | **Coordinate Mapping Formulas & Particle Physics Algorithm Document** |
-| **Dhruv Jain** | **Frontend UI/UX & Web Dashboard** | • Created project design system tokens in CSS custom variables (`:root` in `frontend/css/style.css`).<br>• Configured typography using modern monospace and clean sans-serif fonts (Outfit, Inter, JetBrains Mono).<br>• Defined neon cybernetic accent colors: Cyan (`#00f0ff`), Amber (`#ffb700`), Emerald (`#00ff88`), and Crimson (`#ff0055`). | **UI Design Style Guide & CSS Variables Token Sheet** |
-| **Devansh Joshi** | **Backend Services & Geospatial Algorithms** | • Derived the mathematical **Haversine Distance Formula** ($R = 6371\text{ km}$, $\phi$ and $\lambda$ in radians) for spherical Earth curvature.<br>• Formulated the **Forward Azimuth (Compass Bearing)** formula ($\theta = \text{atan2}(\dots)$).<br>• Conducted mathematical algorithm proofs and sample coordinate conversion verifications. | **Mathematical Algorithm Proofs & Coordinate Conversion Logic** |
-| **Devansh Mittal** | **Backend Simulation & Automated Alerting** | • Formulated the **Weighted Smooth Random Walk** equation for realistic sensor variation: $\text{Value}_t = (0.85 \cdot \text{Value}_{t-1}) + (0.15 \cdot \text{Baseline}) + \Delta_{\text{random}}$.<br>• Prevented erratic data jumps while maintaining organic, continuous environmental drift. | **Mathematical Sensor Drift Algorithm Specification** |
-| **Garv Kumar** | **Database Architecture & Application** | • Designed Entity-Relationship (ER) diagram with 4 core tables: `users`, `stations`, `telemetry_records`, and `environmental_alerts`.<br>• Applied 3rd Normal Form (3NF) normalization to eliminate data redundancy.<br>• Defined relationships ($1:\text{N}$ from stations to telemetry records and alerts). | **Final Database ER Diagram & Table Schema Architecture** |
+| **Devansh Joshi** | Backend Engineer | Geospatial & Location Services | Spherical Trigonometry, Haversine Distance Formula, Forward Azimuth Bearing, Geolocation REST APIs |
+| **Ishita Sinha** | Frontend Engineer | Canvas 2.5D & Graphics Engine | 2.5D Isometric Terrain, 90+ Atmospheric Particle Fluid Engine, Custom Cubic Bézier Spline Charts |
+| **Dhruv Jain** | UI/UX Engineer | Command Center & Dashboard | Cybernetic Glassmorphism UI, Responsive CSS Grid, 8 Live KPI Telemetry Cards, Region Filters |
+| **Devansh Mittal** | Backend Engineer | Simulation & Alerting Engine | Weighted Random Walk Sensor Drift, 4 "What-If" Hazard Scenarios, Automated EPA Safety Alert Rules |
+| **Garv Kumar** | Database Engineer | Architecture & Security | 3NF MySQL Relational Schema, Spring Data JPA Repositories, Salted SHA-256 Auth & RBAC Security |
 
 ---
 
-## 🎨 Week 3 Milestone: Visual Layer Standards, DTO Specifications & SQL Schema (July 20 – July 26)
+## Abstract
 
-### 📌 Overall Week 3 Objective
-Establish visual layer color standards and EPA gradients, integrate lightweight SVG iconography, create backend response DTO models, formulate zone baseline simulation matrices, and produce the production MySQL database schema with time-series indexing.
+Rapid urbanization and escalating industrialization have created volatile urban microclimates, characterized by localized heat islands, sudden particulate surges (PM2.5 / PM10), and dangerous greenhouse gas concentrations. Traditional environmental monitoring platforms remain fragmented—presenting static numeric spreadsheets or flat GIS maps that fail to convey dynamic atmospheric dispersion, directional drift, and real-time community impact.
 
-### 📋 Member-Wise Tasks & Deliverables
+**AETHERIS** introduces a distributed, full-stack **Digital Environment Twin System** engineered to bridge the gap between complex atmospheric science and real-time operational decision-making. Operating on a robust **Java Spring Boot 3.3.5** backend coupled with an interactive **HTML5 Canvas 2.5D visual engine**, the platform models living urban microclimates with continuous 6-second telemetry streams. The system integrates advanced spherical trigonometry—utilizing the **Haversine Great-Circle Distance Formula** and **Forward Azimuth Bearing** equations—to calculate the exact distance and compass orientation from any user's device to the nearest monitoring beacon, projecting a dynamic geodesic laser beam across the 2.5D terrain grid.
 
-| Team Member | Domain / Module | Week 3 Tasks & Focus Areas | Deliverable |
-| :--- | :--- | :--- | :--- |
-| **Ishita Sinha** | **Frontend Canvas & Computer Graphics** | • Defined dynamic color grading based on EPA Air Quality standards: Good (Green) $\rightarrow$ Moderate (Yellow) $\rightarrow$ Unhealthy (Orange/Red) $\rightarrow$ Hazardous (Purple).<br>• Designed thermal color gradients (cool cyan to hot crimson) for the temperature heatmap layer. | **Color Palette Specification & Canvas Styling Sheet** |
-| **Dhruv Jain** | **Frontend UI/UX & Web Dashboard** | • Planned reusable HTML component structures for telemetry widgets, status badges, dropdown filters, and popup modals.<br>• Selected and integrated lightweight SVG icons for environmental parameters (thermometer, wind vane, sound wave, drop, radiation wave). | **High-Fidelity Dashboard Mockups & SVG Asset Kit** |
-| **Devansh Joshi** | **Backend Services & Geospatial Algorithms** | • Designed station domain structure (id, name, state, zoneType, latitude, longitude, elevation, status).<br>• Built response model in `NearestStationResponse.java` DTO.<br>• Defined 16-point cardinal compass directions (N, NNE, NE, ENE, E, ..., NW, NNW) mapping table. | **DTO Classes & Cardinal Direction Mapping Table** |
-| **Devansh Mittal** | **Backend Simulation & Automated Alerting** | • Established zone-specific baseline profiles (Urban Core, Industrial Park, Forest Reserve, Coastal Basin).<br>• Created `SimulationRequest.java` and `TelemetryDTO.java` data transfer objects for live simulation ticks. | **Zone Baseline Matrix & Simulation DTO Classes** |
-| **Garv Kumar** | **Database Architecture & Application** | • Authored the production SQL script in `database/schema.sql` with utf8mb4 encoding, constraints, default values, and timestamps.<br>• Added composite indexes on `station_id` and `recorded_at` to ensure fast time-series queries on large historical datasets. | **Complete & Executable schema.sql** |
+To move beyond passive observation into proactive risk management, AETHERIS features a mathematical **'What-If' Disaster Simulation Engine**. Operators can inject synthetic environmental disturbances—such as Extreme Heatwaves, Industrial Emission Surges, and Atmospheric Cleansing Storms—modeled via weighted smooth random walk algorithms. The visual digital twin reacts instantaneously: radial air quality halos dynamically swell, thermal gradient heatmaps adjust color spectrums from cyan to crimson, and automated threshold watchers trigger real-time hazard alerts whenever EPA limits are breached. Secured with salted SHA-256 password hashing and Role-Based Access Control (RBAC), and fortified with a dual-database architecture featuring automatic failover to an in-memory H2 database, AETHERIS delivers a resilient, audit-ready command center for smart municipalities, industrial parks, and ecological reserves.
 
 ---
 
-## 🏛️ System UML Diagrams & Architecture
+## Week 2
+
+## User Roles (Role-Based Access Control)
+
+AETHERIS enforces strict Role-Based Access Control (RBAC) at the Spring Boot REST API layer to govern access across administrative, operational, and research capabilities:
+
+* **System Administrator (`ROLE_ADMIN`)**:
+  * Full administrative privileges across the entire environment twin platform.
+  * Authorized to dynamically register, update, and deactivate physical and virtual monitoring stations via `/api/stations`.
+  * Can inject and clear global 'What-If' hazard simulations (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`).
+  * Manages operator credentials and oversees system audit logs.
+
+* **Lead Operator (`ROLE_OPERATOR`)**:
+  * Frontline monitoring personnel assigned to environmental command centers.
+  * Authorized to trigger calibrated disaster simulation drills to test emergency response protocols.
+  * Can inspect active threshold breaches and formally acknowledge critical hazard alerts via `/api/alerts/{id}/acknowledge`.
+
+* **Environmental Researcher (`ROLE_RESEARCHER`)**:
+  * Academic and municipal analysts inspecting long-term atmospheric health trends.
+  * Access to real-time telemetry feeds and historical time-series pagination queries (`/api/telemetry/history/{id}`).
+  * Authorized to generate certified ISO 14001:2015 environmental audit compliance reports.
+
+* **Guest Citizen / Public Viewer (`ROLE_GUEST`)**:
+  * Unauthenticated or public users accessing localized air quality intelligence.
+  * View-only access to nearest station telemetry, overall Clean Air Scores (0–100), and plain-English daily health advisories.
+
+---
+
+## Architecture & Core Modules
+
+The AETHERIS system operates as a decoupled, multi-tiered architecture with a central Spring Boot Java application serving both REST API endpoints and static cybernetic client resources.
+
+```mermaid
+graph TD
+    subgraph ClientLayer ["Client Presentation Layer (Browser)"]
+        UI["Cybernetic Command Center Dashboard<br/>(index.html / style.css / app.js)"]
+        CANVAS["2.5D Canvas Engine & Particle Fluid System<br/>(twin-canvas.js / charts.js)"]
+        GEO_CLIENT["GPS Geolocation Pairing Radar<br/>(location.js)"]
+        AUTH_CLIENT["Role-Based Access Control Modal<br/>(auth.js)"]
+    end
+
+    subgraph ControllerLayer ["REST Controller Layer (Spring Boot 3.3.5)"]
+        SC["StationController<br/>/api/stations/*"]
+        TC["TelemetryController<br/>/api/telemetry/*"]
+        SIMC["SimulationController<br/>/api/simulation/*"]
+        AC["AlertController<br/>/api/alerts/*"]
+        AUTHC["AuthController<br/>/api/auth/*"]
+    end
+
+    subgraph ServiceLayer ["Business Logic & Simulation Engines"]
+        SS["StationService<br/>(Haversine Distance & Bearing Math)"]
+        TS["TelemetryService<br/>(Heartbeat Scheduler & What-If Hazard Injector)"]
+        AS["AuthService<br/>(Salted SHA-256 Hashing & RBAC Guard)"]
+    end
+
+    subgraph RepositoryLayer ["Data Access Layer (Spring Data JPA)"]
+        SR["StationRepository"]
+        TR["TelemetryRecordRepository"]
+        AR["EnvironmentalAlertRepository"]
+        UR["UserRepository"]
+    end
+
+    subgraph PersistenceLayer ["Dual-Database Persistence Engine"]
+        MYSQL[("MySQL 8.0 Production Database<br/>Port 3306")]
+        H2[("In-Memory H2 Failover DB<br/>(Zero-Config Fallback)")]
+    end
+
+    UI --> SC & TC & SIMC & AC & AUTHC
+    CANVAS --> TC
+    GEO_CLIENT --> SC
+    AUTH_CLIENT --> AUTHC
+
+    SC --> SS
+    TC --> TS
+    SIMC --> TS
+    AC --> TS
+    AUTHC --> AS
+
+    SS --> SR
+    TS --> TR & AR
+    AS --> UR
+
+    SR & TR & AR & UR --> MYSQL
+    MYSQL -.->|"Automatic Failover if offline"| H2
+```
+
+### Functional Modules
+
+* **Module 1: Geospatial Proximity & Geolocation Services** (*Devansh Joshi*)
+  * Integrates the W3C Browser Geolocation API with backend spherical trigonometry algorithms.
+  * Computes Great-Circle Distance using the Haversine formula ($R = 6371\text{ km}$) and calculates Forward Azimuth compass bearing angles.
+  * Exposes `/api/stations/nearest` to resolve closest sensor nodes and return human-readable distance metrics (meters or kilometers).
+
+* **Module 2: 2.5D Isometric Canvas & Atmospheric Fluid Engine** (*Ishita Sinha*)
+  * Custom HTML5 Canvas rendering pipeline executing at a locked 60 FPS via `requestAnimationFrame`.
+  * Simulates 90+ concurrent atmospheric wind and particulate vectors with variable velocity ($v_x, v_y$), lifespan decay, and screen boundary wrapping.
+  * Powers 3 switchable visual modes: Air Quality Dispersion Halos, Ambient Thermal Heatmap, and Radar Proximity Sweep.
+  * Lightweight cubic Bézier spline interpolation in `charts.js` for smooth real-time telemetry curves.
+
+* **Module 3: Cybernetic Command Dashboard & Telemetry Visualization** (*Dhruv Jain*)
+  * Futuristic dark-mode glassmorphism interface styled via CSS custom variables (`:root` tokens in `style.css`).
+  * 8 core telemetry KPI display cards (AQI, Temperature, Relative Humidity, $\text{CO}_2$, PM2.5, PM10, Noise dB, UV Index, Wind Speed & Direction).
+  * State and regional dropdown filter controls with real-time UI notification banners for threshold hazards.
+  * Central client orchestrator (`app.js`) running a non-blocking 5-second asynchronous polling loop.
+
+* **Module 4: Background Simulation Heartbeat & Hazard Injection Engine** (*Devansh Mittal*)
+  * Spring `@Scheduled(fixedRate = 6000)` background scheduler breathing organic variation into all 9 environmental parameters.
+  * Weighted Smooth Random Walk algorithm ($\text{Value}_t = 0.85 \cdot \text{Value}_{t-1} + 0.15 \cdot \text{Baseline} + \Delta_{\text{random}}$) tailored across 4 distinct environmental zones (*Urban Core, Industrial Park, Forest Reserve, Coastal Basin*).
+  * 4 interactive "What-If" hazard scenarios (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`) with intensity multipliers and automatic alert creation.
+
+* **Module 5: Relational Persistence & Security Infrastructure** (*Garv Kumar*)
+  * 3NF normalized relational schema managing users, stations, telemetry records, and hazard alerts.
+  * Spring Data JPA entity mapping with high-performance composite indexing on `station_id` and `recorded_at`.
+  * Resilient dual-database strategy via `DataSourceConfig.java` providing zero-config automatic failover to H2 in-memory storage.
+  * Salted SHA-256 password hashing and role authorization protecting administrative operations.
+
+---
+
+## Database Architecture & Resiliency Strategy
+
+The system implements a resilient database strategy that guarantees zero runtime interruption, accommodating both enterprise production deployments and standalone local evaluations.
+
+### MySQL 8.0 (Production Relational Core)
+* **Usage**: Persistent storage of user accounts, station registry, time-series telemetry records, and alert audit logs.
+* **Schema Definition**: Authored in [`database/schema.sql`](file:///e:/digital%20twin%20system/database/schema.sql) with utf8mb4 encoding, foreign keys, and default values.
+* **Indexing Strategy**: Time-series B-Tree composite indexes on `(station_id, recorded_at DESC)` ensuring $O(\log N)$ retrieval for real-time dashboards and historical queries.
+
+### In-Memory H2 Database (Zero-Config Automatic Fallback)
+* **Usage**: Transparent failover engine activated automatically when MySQL Server is unreachable.
+* **Implementation**: Managed by `DataSourceConfig.java`, which attempts a connection to MySQL on port 3306; upon connection timeout, it dynamically spins up an in-memory H2 database.
+* **Auto-Seeding**: `DataInitializer.java` automatically seeds 6 default monitoring stations (`NODE-01` to `NODE-06`), initial telemetry history, and standard demo accounts on startup.
+
+---
+
+## Non-Functional Requirements
+
+* **Performance**:
+  * Sub-millisecond execution for spherical Haversine distance and compass bearing calculations.
+  * Canvas rendering pipeline maintains a locked 60 FPS at native device pixel ratio (HiDPI/Retina display scaling) with sub-16ms frame times.
+  * Dashboard polling payload resolves across all active stations in under 150ms.
+* **Security**:
+  * Passwords encrypted with salted SHA-256 before persistence; no plain-text credentials stored.
+  * Role-Based Access Control guards administrative endpoints (station registration and hazard simulation).
+  * Cross-Origin Resource Sharing (CORS) policy configured in `CorsConfig.java` to prevent unauthorized cross-domain exploitation.
+* **Fault Tolerance & Resilience**:
+  * Seamless database failover: Application starts and runs cleanly with or without a live MySQL instance.
+  * Client-side geolocation fallback: Automatically provides predefined regional coordinates if the user denies GPS permissions or uses a browser without native GPS sensors.
+* **Scalability & Code Quality**:
+  * Decoupled layered architecture (Controller $\rightarrow$ Service $\rightarrow$ Repository $\rightarrow$ Database).
+  * Vanilla JavaScript frontend without heavy external UI frameworks ensures instant loading and zero build-step overhead.
+
+---
+
+## Week 3
+
+---
+### UML Design & System Modeling
+---
 
 ### 1. UML Class Diagram (Domain Model & Services)
+
 ```mermaid
 classDiagram
     direction TB
@@ -219,62 +309,10 @@ classDiagram
     AuthService ..> User : authenticates
 ```
 
-### 2. UML Component & System Architecture Diagram
-```mermaid
-graph TD
-    subgraph ClientLayer ["Client Presentation Layer (Browser)"]
-        UI["Cybernetic Command Center Dashboard<br/>(index.html / style.css / app.js)"]
-        CANVAS["2.5D Canvas Engine & Particle Fluid System<br/>(twin-canvas.js / charts.js)"]
-        GEO_CLIENT["GPS Geolocation Pairing Radar<br/>(location.js)"]
-        AUTH_CLIENT["Role-Based Access Control Modal<br/>(auth.js)"]
-    end
+---
 
-    subgraph ControllerLayer ["REST Controller Layer (Spring Boot)"]
-        SC["StationController<br/>/api/stations/*"]
-        TC["TelemetryController<br/>/api/telemetry/*"]
-        SIMC["SimulationController<br/>/api/simulation/*"]
-        AC["AlertController<br/>/api/alerts/*"]
-        AUTHC["AuthController<br/>/api/auth/*"]
-    end
+### 2. UML Sequence Diagram (GPS Pairing & Geodesic Ray Cast Flow)
 
-    subgraph ServiceLayer ["Business Logic & Simulation Engines"]
-        SS["StationService<br/>(Haversine Distance & Bearing Math)"]
-        TS["TelemetryService<br/>(Heartbeat Scheduler & What-If Hazard Injector)"]
-        AS["AuthService<br/>(Salted SHA-256 Hashing & RBAC Guard)"]
-    end
-
-    subgraph RepositoryLayer ["Data Access Layer (Spring Data JPA)"]
-        SR["StationRepository"]
-        TR["TelemetryRecordRepository"]
-        AR["EnvironmentalAlertRepository"]
-        UR["UserRepository"]
-    end
-
-    subgraph PersistenceLayer ["Dual-Database Persistence Engine"]
-        MYSQL[("MySQL 8.0 Production Database<br/>Port 3306")]
-        H2[("In-Memory H2 Failover DB<br/>(Zero-Config Fallback)")]
-    end
-
-    UI --> SC & TC & SIMC & AC & AUTHC
-    CANVAS --> TC
-    GEO_CLIENT --> SC
-    AUTH_CLIENT --> AUTHC
-
-    SC --> SS
-    TC --> TS
-    SIMC --> TS
-    AC --> TS
-    AUTHC --> AS
-
-    SS --> SR
-    TS --> TR & AR
-    AS --> UR
-
-    SR & TR & AR & UR --> MYSQL
-    MYSQL -.->|"Automatic Failover if offline"| H2
-```
-
-### 3. UML Sequence Diagram (GPS Pairing & Geodesic Ray Cast Flow)
 ```mermaid
 sequenceDiagram
     autonumber
@@ -307,55 +345,87 @@ sequenceDiagram
 
 ---
 
-The database schema is provided in [`database/schema.sql`](file:///e:/digital%20twin%20system/database/schema.sql).
+### 3. Entity-Relationship (ER) Diagram (3NF Normalized Schema)
 
-### Tables:
-- `users`: User authentication, hashed passwords, roles, and last recorded GPS coordinates.
-- `stations`: Virtual monitoring twin stations with coordinates, elevation, and operational status.
-- `telemetry_records`: Time-series sensor records (AQI, PM2.5, PM10, temperature, humidity, CO2, noise, UV, wind).
-- `environmental_alerts`: Hazard warnings and threshold breach events.
+```mermaid
+erDiagram
+    STATIONS ||--o{ TELEMETRY_RECORDS : "generates periodic"
+    STATIONS ||--o{ ENVIRONMENTAL_ALERTS : "triggers threshold"
+    USERS ||--o{ ENVIRONMENTAL_ALERTS : "acknowledges"
 
-### Importing Schema into MySQL:
-```bash
-# Using MySQL Command Line Client or Terminal:
-mysql -u root -p < "e:\digital twin system\database\schema.sql"
+    STATIONS {
+        string id PK "e.g. NODE-01"
+        string name "Station Name"
+        string state "State/Region"
+        string zone_type "URBAN_CORE, INDUSTRIAL_PARK, etc."
+        double latitude "GPS Latitude"
+        double longitude "GPS Longitude"
+        double elevation "Elevation in meters"
+        string status "ACTIVE, MAINTENANCE, OFFLINE"
+        timestamp installed_at "Installation Timestamp"
+    }
+
+    TELEMETRY_RECORDS {
+        bigint id PK "Auto Increment"
+        string station_id FK "References STATIONS.id"
+        int aqi "Air Quality Index"
+        double pm25 "PM2.5 Concentration (ug/m3)"
+        double pm10 "PM10 Concentration (ug/m3)"
+        double temperature "Ambient Temp (°C)"
+        double humidity "Relative Humidity (%)"
+        double co2 "CO2 Level (ppm)"
+        double noise_db "Noise Level (dB)"
+        double uv_index "UV Index Rating"
+        double wind_speed "Wind Velocity (km/h)"
+        string wind_direction "Compass Direction"
+        string status_summary "Health / Status Verdict"
+        timestamp recorded_at "Record Timestamp (Indexed)"
+    }
+
+    ENVIRONMENTAL_ALERTS {
+        bigint id PK "Auto Increment"
+        string station_id FK "References STATIONS.id"
+        string severity "INFO, WARNING, CRITICAL, HAZARD"
+        string category "AIR_QUALITY, HEAT_STRESS, CO2_SPIKE"
+        string title "Alert Title"
+        string message "Detailed Advisory"
+        boolean acknowledged "Acknowledgement Status"
+        timestamp triggered_at "Trigger Timestamp"
+    }
+
+    USERS {
+        bigint id PK "Auto Increment"
+        string username UK "Unique Username"
+        string email UK "Unique Email Address"
+        string password_hash "Salted SHA-256 Hash"
+        string role "ROLE_ADMIN, ROLE_OPERATOR, etc."
+        double last_latitude "Last GPS Latitude"
+        double last_longitude "Last GPS Longitude"
+        timestamp created_at "Registration Timestamp"
+    }
 ```
 
 ---
 
-## 🚀 Running the System
+## 🚀 Quick Start & Execution
 
-### 1. Start the Java Spring Boot Backend
-The backend includes the Maven Wrapper (`mvnw.cmd`), requiring only Java 17.
+### 1. Run the Spring Boot Application
+The project includes the Maven Wrapper (`mvnw.cmd`), requiring only Java 17.
 
 ```powershell
 cd "e:\digital twin system\backend"
 .\mvnw.cmd spring-boot:run
 ```
 
-- Backend server starts on: **`http://localhost:9090`**
-- It automatically hosts the static frontend on **`http://localhost:9090/`**
+- Application Server: **`http://localhost:9090`**
+- Both the REST APIs and the 2.5D Digital Twin frontend are served simultaneously on port `9090`.
 
-> **Customizing the Port**: You can change the port to any number (e.g. `8080`, `8081`, `9090`) anytime in [`backend/src/main/resources/application.properties`](file:///e:/digital%20twin%20system/backend/src/main/resources/application.properties) by updating `server.port=9090`.
-
-### 2. Open the Digital Twin in Your Browser
-Navigate to:
-```
-http://localhost:9090
-```
-
-> **Note on Standalone Frontend**: You can also open [`frontend/index.html`](file:///e:/digital%20twin%20system/frontend/index.html) directly in any modern web browser or via Live Server; CORS is enabled on the backend.
-
----
-
-## 🔑 Default Credentials
+### 2. Default Access Credentials
 
 | Role | Username / Email | Password | Access Level |
 |---|---|---|---|
-| **System Administrator** | `admin` or `admin@twin.env` | `admin123` | Full administrative control, node creation, scenario injection |
-| **Lead Operator** | `operator` or `operator@twin.env` | `operator123` | Scenario simulations, alert acknowledgements |
-
-You can also register custom accounts directly using the **"Register New User"** tab in the auth modal.
+| **System Administrator** | `admin` / `admin@twin.env` | `admin123` | Full node creation, scenario injection |
+| **Lead Operator** | `operator` / `operator@twin.env` | `operator123` | Simulation drills, alert resolution |
 
 ---
 
@@ -363,52 +433,51 @@ You can also register custom accounts directly using the **"Register New User"**
 
 | Method | Endpoint | Description |
 |---|---|---|
-| `POST` | `/api/auth/login` | Authenticate with username/password, returns token |
+| `POST` | `/api/auth/login` | Authenticate user and return session token |
 | `POST` | `/api/auth/register` | Register new user account |
-| `GET` | `/api/auth/me` | Fetch authenticated user profile |
-| `POST` | `/api/auth/update-location` | Update user device coordinates |
-| `GET` | `/api/stations` | List all environmental sensor stations |
-| `GET` | `/api/stations/{id}` | Get station details by ID |
-| `POST` | `/api/stations` | Register new virtual digital twin node |
+| `GET` | `/api/auth/me` | Fetch currently logged-in user profile |
+| `GET` | `/api/stations` | List all environmental monitoring stations |
+| `GET` | `/api/stations/{id}` | Inspect single station details |
+| `POST` | `/api/stations` | Register new physical or virtual sensor node |
 | `GET` | `/api/stations/nearest?lat={lat}&lng={lng}` | Haversine distance, bearing, and nearest station pairing |
-| `GET` | `/api/telemetry/live` | Stream live telemetry across all stations |
-| `GET` | `/api/telemetry/history/{stationId}` | Fetch historical time-series logs |
+| `GET` | `/api/telemetry/live` | Stream live telemetry across all active stations |
+| `GET` | `/api/telemetry/history/{stationId}` | Fetch historical time-series telemetry records |
 | `POST` | `/api/simulation/trigger` | Inject scenario (`HEATWAVE`, `INDUSTRIAL_EMISSION`, `RAIN_CLEANSING`, `NORMAL`) |
-| `GET` | `/api/alerts` | Get threshold alerts (`?unacknowledgedOnly=true`) |
+| `GET` | `/api/alerts` | Fetch threshold hazard alerts (`?unacknowledgedOnly=true`) |
 | `POST` | `/api/alerts/{id}/acknowledge` | Acknowledge active hazard alert |
 
 ---
 
 ## 📁 Project Directory Structure
 
-```
+```text
 digital twin system/
 ├── database/
-│   └── schema.sql                  # MySQL database creation & seed data
-├── frontend/                       # Standalone frontend application
+│   └── schema.sql                  # MySQL database schema script & index definitions
+├── frontend/                       # Client web application
 │   ├── index.html                  # Cybernetic Digital Twin command center UI
 │   ├── css/
-│   │   └── style.css               # Futuristic dark-mode glassmorphism design system
+│   │   └── style.css               # Dark-mode glassmorphism design tokens & styles
 │   └── js/
-│       ├── app.js                  # Main dashboard orchestrator & polling
-│       ├── auth.js                 # Authentication, tokens, and user status
-│       ├── location.js             # On-screen GPS pairing popup & Haversine calculation
-│       ├── twin-canvas.js          # 2.5D isometric atmospheric terrain & particle engine
-│       └── charts.js               # Smooth HTML5 canvas time-series curves
-├── backend/                        # Java Spring Boot 3.3.5 Application
-│   ├── pom.xml                     # Maven project configuration
-│   ├── mvnw.cmd                    # Maven wrapper
+│       ├── app.js                  # Main dashboard orchestrator & 5s polling loop
+│       ├── auth.js                 # Authentication, role badges, and session storage
+│       ├── location.js             # On-screen GPS pairing popup & coordinate helpers
+│       ├── twin-canvas.js          # 2.5D isometric atmospheric terrain & particle fluid engine
+│       └── charts.js               # Lightweight cubic Bézier spline curve charting
+├── backend/                        # Java Spring Boot 3.3.5 Backend Service
+│   ├── pom.xml                     # Maven project configuration & dependencies
+│   ├── mvnw.cmd                    # Maven wrapper executable
 │   └── src/main/
 │       ├── java/com/digitaltwin/environment/
 │       │   ├── EnvironmentTwinApplication.java
 │       │   ├── config/             # CORS, DataInitializer, SecurityHelper, DataSourceConfig
-│       │   ├── model/              # User, Station, TelemetryRecord, EnvironmentalAlert
+│       │   ├── model/              # Station, TelemetryRecord, EnvironmentalAlert, User
 │       │   ├── repository/         # Spring Data JPA repositories
 │       │   ├── dto/                # Auth, Telemetry, Simulation, NearestStation DTOs
-│       │   ├── service/            # AuthService, StationService, TelemetryService
-│       │   └── controller/         # Auth, Station, Telemetry, Simulation, Alert Controllers
+│       │   ├── service/            # StationService, TelemetryService, AuthService
+│       │   └── controller/         # Station, Telemetry, Simulation, Alert, Auth Controllers
 │       └── resources/
 │           ├── application.properties
-│           └── static/             # Frontend files served directly by Spring Boot
-└── README.md
+│           └── static/             # Static frontend distribution served by Spring Boot
+└── README.md                       # Comprehensive Project Documentation
 ```
