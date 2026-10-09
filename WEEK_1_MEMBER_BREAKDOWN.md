@@ -15,7 +15,7 @@ Week 1 of the AETHERIS Digital Twin project focused on foundational system scopi
 | **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 7597934912 |
 | **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 6375536662 |
 | **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 8239361149 |
-| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 7412894068 |
+| **devansh-mittal96** | — | — | — |
 | **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 9241970138 |
 
 ---
@@ -68,7 +68,7 @@ Week 1 of the AETHERIS Digital Twin project focused on foundational system scopi
 
 ---
 
-### 5. Garv Kumar
+### 5. devansh-mittal96
 - **Role / Domain:** Database Architecture & Application
 - **Core Focus:** Requirements Specification, Entity Identification & Storage Plan
 - **Weekly Tasks:**
@@ -88,4 +88,4 @@ Week 1 of the AETHERIS Digital Twin project focused on foundational system scopi
 | **Dhruv Jain** | Frontend UI/UX & Web Dashboard | Low-Fidelity Wireframes & Layout Blueprint | ✅ Completed |
 | **Devansh Joshi** | Backend Services & Geospatial Math | Geospatial Specification & API Contracts | ✅ Completed |
 | **Devansh Mittal** | Backend Simulation & Automated Alerting | Environmental Simulation Specs & Thresholds | ✅ Completed |
-| **Garv Kumar** | Database Architecture & Security | Requirements Spec & Draft Database Plan | ✅ Completed |
+| **devansh-mittal96** | Database Architecture & Security | Requirements Spec & Draft Database Plan | ✅ Completed |
