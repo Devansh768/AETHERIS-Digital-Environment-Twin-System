@@ -93,6 +93,220 @@ Formulate the core mathematical models (spherical distance, forward azimuth, coo
 
 ---
 
+## 🎨 Week 3 Milestone: Visual Layer Standards, DTO Specifications & SQL Schema (July 20 – July 26)
+
+### 📌 Overall Week 3 Objective
+Establish visual layer color standards and EPA gradients, integrate lightweight SVG iconography, create backend response DTO models, formulate zone baseline simulation matrices, and produce the production MySQL database schema with time-series indexing.
+
+### 📋 Member-Wise Tasks & Deliverables
+
+| Team Member | Domain / Module | Week 3 Tasks & Focus Areas | Deliverable |
+| :--- | :--- | :--- | :--- |
+| **Ishita Sinha** | **Frontend Canvas & Computer Graphics** | • Defined dynamic color grading based on EPA Air Quality standards: Good (Green) $\rightarrow$ Moderate (Yellow) $\rightarrow$ Unhealthy (Orange/Red) $\rightarrow$ Hazardous (Purple).<br>• Designed thermal color gradients (cool cyan to hot crimson) for the temperature heatmap layer. | **Color Palette Specification & Canvas Styling Sheet** |
+| **Dhruv Jain** | **Frontend UI/UX & Web Dashboard** | • Planned reusable HTML component structures for telemetry widgets, status badges, dropdown filters, and popup modals.<br>• Selected and integrated lightweight SVG icons for environmental parameters (thermometer, wind vane, sound wave, drop, radiation wave). | **High-Fidelity Dashboard Mockups & SVG Asset Kit** |
+| **Devansh Joshi** | **Backend Services & Geospatial Algorithms** | • Designed station domain structure (id, name, state, zoneType, latitude, longitude, elevation, status).<br>• Built response model in `NearestStationResponse.java` DTO.<br>• Defined 16-point cardinal compass directions (N, NNE, NE, ENE, E, ..., NW, NNW) mapping table. | **DTO Classes & Cardinal Direction Mapping Table** |
+| **Devansh Mittal** | **Backend Simulation & Automated Alerting** | • Established zone-specific baseline profiles (Urban Core, Industrial Park, Forest Reserve, Coastal Basin).<br>• Created `SimulationRequest.java` and `TelemetryDTO.java` data transfer objects for live simulation ticks. | **Zone Baseline Matrix & Simulation DTO Classes** |
+| **Garv Kumar** | **Database Architecture & Application** | • Authored the production SQL script in `database/schema.sql` with utf8mb4 encoding, constraints, default values, and timestamps.<br>• Added composite indexes on `station_id` and `recorded_at` to ensure fast time-series queries on large historical datasets. | **Complete & Executable schema.sql** |
+
+---
+
+## 🏛️ System UML Diagrams & Architecture
+
+### 1. UML Class Diagram (Domain Model & Services)
+```mermaid
+classDiagram
+    direction TB
+
+    class Station {
+        -String id
+        -String name
+        -String zoneType
+        -Double latitude
+        -Double longitude
+        -Double elevation
+        -String state
+        -String status
+        -String description
+        -LocalDateTime installedAt
+        +getId() String
+        +getName() String
+        +getLatitude() Double
+        +getLongitude() Double
+        +getStatus() String
+    }
+
+    class TelemetryRecord {
+        -Long id
+        -String stationId
+        -Integer aqi
+        -Double pm25
+        -Double pm10
+        -Double temperature
+        -Double humidity
+        -Double co2
+        -Double noiseDb
+        -Double uvIndex
+        -Double windSpeed
+        -String windDirection
+        -String statusSummary
+        -LocalDateTime recordedAt
+        +getId() Long
+        +getStationId() String
+        +getAqi() Integer
+        +getTemperature() Double
+    }
+
+    class EnvironmentalAlert {
+        -Long id
+        -String stationId
+        -String severity
+        -String category
+        -String title
+        -String message
+        -Boolean acknowledged
+        -LocalDateTime triggeredAt
+        +getId() Long
+        +getSeverity() String
+        +isAcknowledged() Boolean
+        +acknowledge() void
+    }
+
+    class User {
+        -Long id
+        -String username
+        -String email
+        -String passwordHash
+        -String role
+        -Double lastLatitude
+        -Double lastLongitude
+        -LocalDateTime createdAt
+        +getId() Long
+        +getUsername() String
+        +getRole() String
+    }
+
+    class StationService {
+        -StationRepository stationRepository
+        +getAllStations() List~Station~
+        +getStationById(String id) Station
+        +findNearestStation(Double lat, Double lng) NearestStationResponse
+        +calculateHaversine(lat1, lon1, lat2, lon2) double
+        +calculateBearing(lat1, lon1, lat2, lon2) double
+        +getCardinalDirection(double degrees) String
+    }
+
+    class TelemetryService {
+        -TelemetryRecordRepository telemetryRepo
+        -EnvironmentalAlertRepository alertRepo
+        +generateHeartbeatTelemetry() void
+        +getLatestTelemetry() List~TelemetryDTO~
+        +triggerSimulation(SimulationRequest req) void
+        +checkSafetyThresholds(TelemetryRecord record) void
+    }
+
+    class AuthService {
+        -UserRepository userRepository
+        +login(LoginRequest req) AuthResponse
+        +register(RegisterRequest req) AuthResponse
+        +hashPassword(String password) String
+    }
+
+    Station "1" --> "0..*" TelemetryRecord : records
+    Station "1" --> "0..*" EnvironmentalAlert : triggers
+    StationService ..> Station : manages
+    TelemetryService ..> TelemetryRecord : persists
+    TelemetryService ..> EnvironmentalAlert : generates
+    AuthService ..> User : authenticates
+```
+
+### 2. UML Component & System Architecture Diagram
+```mermaid
+graph TD
+    subgraph ClientLayer ["Client Presentation Layer (Browser)"]
+        UI["Cybernetic Command Center Dashboard<br/>(index.html / style.css / app.js)"]
+        CANVAS["2.5D Canvas Engine & Particle Fluid System<br/>(twin-canvas.js / charts.js)"]
+        GEO_CLIENT["GPS Geolocation Pairing Radar<br/>(location.js)"]
+        AUTH_CLIENT["Role-Based Access Control Modal<br/>(auth.js)"]
+    end
+
+    subgraph ControllerLayer ["REST Controller Layer (Spring Boot)"]
+        SC["StationController<br/>/api/stations/*"]
+        TC["TelemetryController<br/>/api/telemetry/*"]
+        SIMC["SimulationController<br/>/api/simulation/*"]
+        AC["AlertController<br/>/api/alerts/*"]
+        AUTHC["AuthController<br/>/api/auth/*"]
+    end
+
+    subgraph ServiceLayer ["Business Logic & Simulation Engines"]
+        SS["StationService<br/>(Haversine Distance & Bearing Math)"]
+        TS["TelemetryService<br/>(Heartbeat Scheduler & What-If Hazard Injector)"]
+        AS["AuthService<br/>(Salted SHA-256 Hashing & RBAC Guard)"]
+    end
+
+    subgraph RepositoryLayer ["Data Access Layer (Spring Data JPA)"]
+        SR["StationRepository"]
+        TR["TelemetryRecordRepository"]
+        AR["EnvironmentalAlertRepository"]
+        UR["UserRepository"]
+    end
+
+    subgraph PersistenceLayer ["Dual-Database Persistence Engine"]
+        MYSQL[("MySQL 8.0 Production Database<br/>Port 3306")]
+        H2[("In-Memory H2 Failover DB<br/>(Zero-Config Fallback)")]
+    end
+
+    UI --> SC & TC & SIMC & AC & AUTHC
+    CANVAS --> TC
+    GEO_CLIENT --> SC
+    AUTH_CLIENT --> AUTHC
+
+    SC --> SS
+    TC --> TS
+    SIMC --> TS
+    AC --> TS
+    AUTHC --> AS
+
+    SS --> SR
+    TS --> TR & AR
+    AS --> UR
+
+    SR & TR & AR & UR --> MYSQL
+    MYSQL -.->|"Automatic Failover if offline"| H2
+```
+
+### 3. UML Sequence Diagram (GPS Pairing & Geodesic Ray Cast Flow)
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as User / Operator
+    participant UI as Dashboard UI (location.js)
+    participant BrowserGPS as W3C Geolocation API
+    participant API as StationController
+    participant Service as StationService
+    participant Repo as StationRepository
+    participant Canvas as 2.5D Engine (twin-canvas.js)
+
+    User->>UI: Click "Enable Location" / Select Zone Preset
+    UI->>BrowserGPS: navigator.geolocation.getCurrentPosition()
+    BrowserGPS-->>UI: Return Coordinates (Lat, Lng)
+    UI->>API: GET /api/stations/nearest?lat={lat}&lng={lng}
+    API->>Service: findNearestStation(lat, lng)
+    Service->>Repo: findAll()
+    Repo-->>Service: List of active stations
+    loop For each station node
+        Service->>Service: Compute Haversine Distance (d = 2R · arcsin(...))
+        Service->>Service: Compute Forward Azimuth Bearing (θ = atan2(...))
+    end
+    Service->>Service: Filter Minimum Distance Node & Map Cardinal Direction
+    Service-->>API: NearestStationResponse (id, name, distanceKm, bearing, coords)
+    API-->>UI: HTTP 200 OK (JSON)
+    UI->>Canvas: Dispatch stationSelected & Coordinates
+    Canvas->>Canvas: Compute Screen Projection X, Y
+    Canvas->>User: Animate Geodesic Laser Beam to Target Beacon
+```
+
+---
+
 The database schema is provided in [`database/schema.sql`](file:///e:/digital%20twin%20system/database/schema.sql).
 
 ### Tables:
