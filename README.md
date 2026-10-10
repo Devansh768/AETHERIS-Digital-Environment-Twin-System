@@ -481,3 +481,8 @@ digital twin system/
 │           └── static/             # Static frontend distribution served by Spring Boot
 └── README.md                       # Comprehensive Project Documentation
 ```
+## 📄 Project Documentation
+
+- [📘 Project Abstract](AETHERIS_ABSTRACT.pdf)
+- [📗 Complete Project Report](AETHERIS_Project%20Report.pdf)
+- [📙 Software Requirements Specification (SRS)](AETHERIS_SRS.pdf)
