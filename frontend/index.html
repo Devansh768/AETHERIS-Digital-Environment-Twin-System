@@ -2387,34 +2387,176 @@
         </div>
       </div>
 
-      <!-- Success View (Hidden until payment completes) -->
-      <div id="subSuccessView" style="display:none; padding:3rem 2rem; text-align:center;">
-        <div style="font-size:3.5rem; margin-bottom:1rem;">🎉</div>
-        <h2 style="font-family:var(--font-display); font-size:1.75rem; font-weight:800; color:#fff; margin-bottom:0.5rem;">
-          Subscription Activated Successfully!
+      <!-- Success View: Official Payment PDF & Activation Card -->
+      <div id="subSuccessView" style="display:none; padding:1.75rem 1rem 2.5rem 1rem; text-align:center;">
+        <div style="font-size:3rem; margin-bottom:0.5rem;">🎉</div>
+        <h2 style="font-family:var(--font-display); font-size:1.65rem; font-weight:800; color:#fff; margin-bottom:0.35rem;">
+          Payment Successful & Subscription Activated!
         </h2>
-        <p style="color:var(--text-muted); font-size:0.95rem; max-width:550px; margin:0 auto 1.5rem auto;">
-          Your enterprise digital twin node allocation and environmental compliance engine are now active. Official GST tax invoice generated.
+        <p style="color:var(--text-muted); font-size:0.9rem; max-width:620px; margin:0 auto 1.25rem auto;">
+          Your environmental digital twin node allocation is now active. Official GST tax invoice & payment receipt PDF has been generated below.
         </p>
 
-        <div style="max-width:500px; margin:0 auto 2rem auto; background:rgba(6,182,212,0.08); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:1.25rem; text-align:left;">
-          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.85rem;">
-            <span style="color:var(--text-muted);">Tax Invoice Number:</span>
-            <span style="color:#fff; font-weight:700; font-family:var(--font-mono);" id="subSuccessInvNo">INV-AETH-2026-IN8842</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.85rem;">
-            <span style="color:var(--text-muted);">Enterprise License Key:</span>
-            <span style="color:var(--cyan-bright); font-weight:700; font-family:var(--font-mono);" id="subSuccessKey">AETH-PRO-IN-2026-LIVE</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
-            <span style="color:var(--text-muted);">Active Node Quota:</span>
-            <span style="color:var(--emerald); font-weight:700;" id="subSuccessQuota">50 Dedicated Virtual Simulation Nodes (Active)</span>
-          </div>
+        <!-- PDF Quick Action Toolbar -->
+        <div style="display:flex; justify-content:center; align-items:center; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <button class="btn-demo primary" id="btnDownloadPaymentPdf" style="background:var(--cyan-primary); color:#060911; font-weight:700; box-shadow:0 0 15px var(--cyan-glow); padding:0.65rem 1.35rem; display:inline-flex; align-items:center; gap:0.4rem;">
+            <span>⬇️ Download Payment PDF</span>
+          </button>
+          <button class="btn-demo" id="btnPrintPaymentReceipt" style="padding:0.65rem 1.2rem; display:inline-flex; align-items:center; gap:0.4rem;">
+            <span>🖨️ Print / Save as PDF</span>
+          </button>
+          <button class="btn-header" id="btnLaunchSubscribedTwin" style="padding:0.65rem 1.2rem; display:inline-flex; align-items:center; gap:0.4rem;">
+            <span>🚀 Launch Live Digital Twin</span>
+          </button>
         </div>
 
-        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-          <button class="btn-demo" id="btnDownloadGstInvoice">🖨️ Download GST Tax Invoice</button>
-          <button class="btn-header primary" id="btnLaunchSubscribedTwin">🚀 Launch Live Digital Twin</button>
+        <!-- Embedded Payment PDF Paper Document Sheet -->
+        <div class="payment-pdf-paper-container" id="paymentPdfDocumentPreview">
+          <div class="pdf-paid-watermark">PAID</div>
+
+          <!-- Invoice Header -->
+          <div class="pdf-inv-header">
+            <div>
+              <div class="pdf-inv-brand-name">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+                </svg>
+                <span>AETHERIS TECHNOLOGIES PVT. LTD.</span>
+              </div>
+              <div class="pdf-inv-brand-sub">
+                Earth Intelligence Platform • Registered Corporate HQ<br>
+                Tech Park Corridor, Pune, Maharashtra 411057 • CIN: U72900PN2026PTC88219<br>
+                GSTIN: <strong style="color:#0f172a;">27AAACT2727Q1ZB</strong> • State Code: 27 (Maharashtra)
+              </div>
+            </div>
+
+            <div class="pdf-inv-title-box">
+              <div class="pdf-inv-title">TAX INVOICE & RECEIPT</div>
+              <div class="pdf-inv-subtitle">ORIGINAL FOR RECIPIENT • B2B / B2G</div>
+              <div style="margin-top:0.35rem; font-size:0.75rem; color:#10b981; font-weight:700;">
+                ✓ PAYMENT CONFIRMED
+              </div>
+            </div>
+          </div>
+
+          <!-- Metadata Grid -->
+          <div class="pdf-inv-meta-grid">
+            <div class="pdf-meta-col">
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Invoice Number:</span>
+                <span class="pdf-meta-val highlight" id="pdfInvNumber">TAX-INV-2026-IN-8842</span>
+              </div>
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Invoice Date:</span>
+                <span class="pdf-meta-val" id="pdfInvDate">10-OCT-2026</span>
+              </div>
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Payment Mode:</span>
+                <span class="pdf-meta-val" id="pdfInvPayMode">UPI Instant Transfer</span>
+              </div>
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Transaction Ref:</span>
+                <span class="pdf-meta-val" id="pdfInvTxnRef">UPI/20261010/884920</span>
+              </div>
+            </div>
+
+            <div class="pdf-meta-col">
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Billed To Entity:</span>
+                <span class="pdf-meta-val" id="pdfInvClientName">EcoSmart Industrial Ltd</span>
+              </div>
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Client GSTIN:</span>
+                <span class="pdf-meta-val" id="pdfInvClientGstin">27AAACT2727Q1ZB</span>
+              </div>
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">Place of Supply:</span>
+                <span class="pdf-meta-val" id="pdfInvPlaceSupply">Maharashtra [27]</span>
+              </div>
+              <div class="pdf-meta-item">
+                <span class="pdf-meta-label">SAC Code:</span>
+                <span class="pdf-meta-val">998313 (IT / SaaS Data Services)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Line Items Table -->
+          <table class="pdf-inv-table">
+            <thead>
+              <tr>
+                <th style="width:5%;">#</th>
+                <th style="width:45%;">Item & Service Description</th>
+                <th style="width:15%;">SAC</th>
+                <th style="width:15%;">Billing Term</th>
+                <th style="width:20%;">Amount (INR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <strong id="pdfInvPlanTitle">AETHERIS Twin Smart Business Pro Subscription</strong><br>
+                  <span style="font-size:0.75rem; color:#64748b;" id="pdfInvPlanDesc">Real-Time Atmospheric 2.5D Digital Twin, Fluid Particle Physics & EPA Hazard Watcher</span>
+                </td>
+                <td>998313</td>
+                <td id="pdfInvCycleText">Annual (12 Months)</td>
+                <td id="pdfInvGrossVal">₹3,588.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Financial Breakdown -->
+          <div class="pdf-inv-totals-box">
+            <div class="pdf-inv-totals-table">
+              <div class="pdf-totals-row">
+                <span>Taxable Value:</span>
+                <span id="pdfInvTaxableVal">₹3,588.00</span>
+              </div>
+              <div class="pdf-totals-row" id="pdfRowCgst">
+                <span>Central GST (CGST @ 9%):</span>
+                <span id="pdfInvCgstVal">₹322.92</span>
+              </div>
+              <div class="pdf-totals-row" id="pdfRowSgst">
+                <span>State GST (SGST @ 9%):</span>
+                <span id="pdfInvSgstVal">₹322.92</span>
+              </div>
+              <div class="pdf-totals-row" id="pdfRowIgst" style="display:none;">
+                <span>Integrated GST (IGST @ 18%):</span>
+                <span id="pdfInvIgstVal">₹645.84</span>
+              </div>
+              <div class="pdf-totals-row grand-total">
+                <span>Total Amount Paid:</span>
+                <span id="pdfInvTotalPaid">₹4,233.84</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise License Activation Bar -->
+          <div class="pdf-license-banner">
+            <div style="font-weight:700; color:#0e7490; font-size:0.82rem; margin-bottom:2px;">
+              🔑 ENTERPRISE SYSTEM PROVISIONING DETAILS
+            </div>
+            <div class="pdf-license-grid">
+              <div>License Key: <strong style="color:#0f172a;" id="pdfInvLicenseKey">AETH-PRO-IN-2026-LIVE</strong></div>
+              <div>Node Quota: <strong style="color:#0f172a;" id="pdfInvNodeQuota">50 Dedicated Virtual Simulation Nodes</strong></div>
+            </div>
+          </div>
+
+          <!-- Invoice Footer & Digital Signature -->
+          <div class="pdf-inv-footer">
+            <div style="max-width:440px; line-height:1.45;">
+              <strong>Statutory Declaration:</strong><br>
+              1. This is an electronically generated Tax Invoice eligible for 100% Input Tax Credit (ITC) under Section 16 of CGST Act, 2017.<br>
+              2. Reverse charge is not applicable. All disputes subject to Pune jurisdiction.
+            </div>
+
+            <div class="pdf-signature-box">
+              <div class="pdf-signature-stamp">Aetheris Twin Systems</div>
+              <div style="font-weight:700; color:#0f172a; margin-top:2px;">Authorized Digital Signatory</div>
+              <div style="color:#64748b; font-size:0.7rem;">Automated Finance & Billing Node</div>
+            </div>
+          </div>
         </div>
       </div>
       </div>
@@ -2426,6 +2568,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Scripts -->
+  <script src="js/jspdf.umd.min.js"></script>
   <script src="js/twin-canvas.js"></script>
   <script src="js/charts.js"></script>
   <script src="js/location.js"></script>
