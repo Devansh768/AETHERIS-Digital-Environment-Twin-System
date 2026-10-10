@@ -90,7 +90,7 @@ class TwinLocationManager {
   requestBrowserGeolocation() {
     const statusMsg = document.getElementById('locationStatusMsg');
     if (statusMsg) {
-      statusMsg.innerHTML = '<span style="color:var(--cyan-bright)">Locating device via GPS sensors...</span>';
+      statusMsg.innerHTML = '<span style="color:var(--cyan-bright)">Locating coordinates via browser GPS...</span>';
     }
 
     if (!navigator.geolocation) {
