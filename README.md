@@ -836,4 +836,6 @@ All official project documents for the AETHERIS Digital Environment Twin System 
 | 📝 [Software Requirements Specification (SRS)](AETHERIS_SRS.pdf) | Functional and non-functional requirements |
 
 **Note:** Click any document title to view the corresponding PDF.
----
+
+🎥 Project Demonstration Video
+[▶ Watch AETHERIS Project Demo](https://drive.google.com/file/d/13fv6aLmk2SIO6W35ffmlyBT6Mm6-Gug0/view?usp=sharing)
