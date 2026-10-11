@@ -824,3 +824,16 @@ digital twin system/
 ├── WEEK_3_MEMBER_BREAKDOWN.md      # Week 3 testing, verification & deployment breakdown
 └── README.md                       # Comprehensive Project Documentation
 ```
+## 📚 AETHERIS — Project Documentation
+
+All official project documents for the AETHERIS Digital Environment Twin System are available below.
+
+| Document | Description |
+|---|---|
+| 📄 [Abstract](AETHERIS_ABSTRACT.pdf) | Project overview, objectives, and scope |
+| 📘 [Project Report](AETHERIS_Project%20Report.pdf) | Detailed project implementation and methodology |
+| 📑 [Research Paper](AETHERIS_Research_Paper.pdf) | Research, analysis, and proposed approach |
+| 📝 [Software Requirements Specification (SRS)](AETHERIS_SRS.pdf) | Functional and non-functional requirements |
+
+**Note:** Click any document title to view the corresponding PDF.
+---
