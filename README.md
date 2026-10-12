@@ -1,4 +1,5 @@
 # AETHERIS: Real-Time 2.5D Digital Environment Twin System
+Live Server: (https://digital-twin-system-1.vercel.app/)
 
 ---
 
@@ -6,7 +7,8 @@
 
 ## Project Administration
 
-* **Project Title:** AETHERIS — Real-Time 2.5D Digital Environment Twin for Microclimate Tracking & Hazard Simulation
+* **Project Title:** AETHERIS — Real-Time 2.5D Digital Environment Twin for Microclimate Tracking & Hazard Simulation.
+ 
 * **Domain:** Environmental Informatics, Cybernetic Simulation & Geospatial Computing
 * **Technology Stack:** Java 17, Spring Boot 3.3.5, Spring Data JPA, MySQL 8.0, In-Memory H2, HTML5 Canvas 2D, Vanilla JavaScript, CSS3 Glassmorphism
 
