@@ -834,7 +834,7 @@ All official project documents for the AETHERIS Digital Environment Twin System 
 | 📘 [Project Report](AETHERIS_Project%20Report.pdf) | Detailed project implementation and methodology |
 | 📑 [Research Paper](AETHERIS_Research_Paper.pdf) | Research, analysis, and proposed approach |
 | 📝 [Software Requirements Specification (SRS)](AETHERIS_SRS.pdf) | Functional and non-functional requirements |
-| 📊 [**View / Download AETHERIS Project Presentation (PPT)**](AETHERIS_Presentation.pptx) |
+| 📊 [**View / Download TwinSphere Java Presentation (PPT)**](./TwinSphere_Java%20PPT.pptx) |
 
 **Note:** Click any document title to view the corresponding PDF.
 
