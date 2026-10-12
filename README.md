@@ -12,13 +12,13 @@
 
 ### Team Members
 
-| Name | Enrollment | Email | RTU Roll No. |
+| Name | RTU Roll No. | Enrollment | Email |
 | :--- | :--- | :--- | :--- |
-| **Devansh Joshi** | 24E1ARADM40P039 | devanshjoshi980@gmail.com | 24EARAD039 |
-| **Devansh Mittal** | 24E1ARADM40P041 | devanshmittal308@gmail.com | 24EARAD041 |
-| **Dhruv Jain** | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com | 24EARAD043 |
-| **Garv Kumar** | 24E1ARADM40P049 | garvmittal94068@gmail.com | 24EARAD049 |
-| **Ishita Sinha** | 24E1ARADF40P063 | ishsinha1106@gmail.com | 24EARAD063 |
+| **Devansh Joshi** | 24EARAD039 |24E1ARADM40P039 | devanshjoshi980@gmail.com |
+| **Devansh Mittal** | 24EARAD041 | 24E1ARADM40P041 | devanshmittal308@gmail.com |
+| **Dhruv Jain** | 24EARAD043 | 24E1ARADM40P043 | dhruvtorawat5555@gmail.com |
+| **Garv Kumar** | 24EARAD049 | 24E1ARADM40P049 | garvmittal94068@gmail.com |
+| **Ishita Sinha** | 24EARAD063 | 24E1ARADF40P063 | ishsinha1106@gmail.com |
 
 ### Module Ownership & Primary Responsibilities
 
